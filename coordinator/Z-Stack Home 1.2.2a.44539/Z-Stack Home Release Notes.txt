@@ -1,0 +1,131 @@
+Texas Instruments, Inc.
+
+Z-Stack Home Release Notes
+
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+Version 1.2.2a
+October 16, 2015
+
+
+Notices:
+ - Z-Stack Home 1.2.2a meets requirements for full conformance to the ZigBee
+   Home Automation 1.2 specification. The Z-Stack Home 1.2.2a release is based
+   on Z-Stack Core 2.6.3a - see the "Z-Stack Core Release Notes" for details.
+
+ - Z-Stack Home provides over 20 documents that cover various aspects of this
+   Home Automation development package. Included is API documentation for each
+   layer of the Z-Stack system, and a selection of Developer's Guides, User's
+   Guides, and Application Notes to accelerate your product development. These
+   documents can be found at: <InstallPath>\Documents folder with the default
+   set to: "C:\Texas Instruments\Z-Stack Home 1.2.2.44539\Documents" which can
+   be accessed from the Windows Start Menu.
+
+ - Z-Stack for the CC2530 platform has been built and tested with IAR's CLIB
+   library, which provides a light-weight C library which does not support
+   Embedded C++. Use of DLIB is not recommended for this platform. Z-Stack
+   for the CC2538 platform has been tested with the DLIB library.
+
+ - Z-Stack projects specify compile options in two ways: (1) "-D" statements
+   in f8wConfig.cfg and other *.cfg files, (2) entries in the IDE Compiler
+   Preprocessor Defined Symbols. When using the EW8051 or EW430 compilers,
+   settings made in the IDE will override settings in the *.cfg files. When
+   using the EWARM compiler, settings in the *.cfg files will override any
+   made in the IDE.
+
+ - When programming devices for the first time with this release, the entire
+   Flash memory should be erased. For the CC2530 and EXP5438 platforms, select
+   "Erase Flash" in the "Debugger->Texas Instruments->Download" tab of the
+   project options. For the CC2538, select "Project->Download->Erase Memory".
+
+ - Application, library, and hex files were built/tested with the following
+   versions of IAR tools and may not work with different IAR tool versions:
+     - CC2538 + SRF06EB:  EWARM 7.40.2  (7.40.2.8570)
+     - CC2530 + SRF05EB:  EW8051 9.10.1 (9.10.1.2146)
+     - CC2530 + EXP5438:  EW430 6.20.1  (6.20.1.931)
+
+ - Foundation software library files for the CC2538 include the following:
+     - bsp.lib, version 1.3.1
+     - driverlib.lib, version 1.3.1
+     - usblib.lib, version 1.0.1
+
+
+Changes:
+ - [5844] Modified the ZCL EZ-Mode to support the ZCL_STANDALONE compile flag.
+
+
+Bug Fixes:
+ - [6193] Fixed an issue where an EZ-Mode target would stop waiting for any
+   Identify Query Responses when the first response was received.
+
+ - [6129] Fixed a problem for OTA client devices where it returned the wrong
+   value (0x02 for download complete) for its Image Upgrade Status attribute
+   after a download completed but the Server sent the abort upgrade command.
+
+ - [6124] Fixed a problem in EZ-Mode commissioning where binding information
+   was not being saved in non-volatile memory when NV_RESTORE was enabled.
+
+ - [6109] Fixed a problem for OTA client devices where Image Upgrade Status
+   attribute had an incorrect data type - changed from 'ZCL_DATATYPE_UINT8'
+   to 'ZCL_DATATYPE_ENUM8'.
+
+ - [5918] Fixed the device ID in the simple descriptor for the following five
+   sample application - they previously indicated 'Dimmable Light':
+     - Door Lock
+     - Door Lock Controller
+     - Heating Cooling Unit
+     - Temperature Sensor
+     - Thermostat
+
+ - [5839] Added rejoin back off capability to force the HA device to wait for
+   a specified amount of time after attempting to rejoin before attempting to
+   rejoin again, unless prompted by user intervention. The back off timer and
+   scan duration can now be set at compile or run time. Default values for both
+   timers is set at 15 minutes, per section 5.3.2 of the HA 1.2 spec.
+
+
+Memory Sizes:
+ - Actual usage of Flash and RAM memory is variable, of course, and dependent
+   on the specific application. Developers should adjust various parameters,
+   such as, program stack size and dynamic memory heap size to meet their
+   specific needs.
+
+ - The following tables provide comparison of Flash and RAM sizes for certain
+   device configurations for the HomeAutomation SampleLight application provided
+   with this release. These SampleLight projects can be found in the installed
+   <InstallPath>\Projects\zstack\HomeAutomation\SampleLight folder for various
+   HW platforms. In most Z-Stack sample applications, generic heap and stack
+   settings are used which have been selected to accommodate a wide range of
+   applications. For the HA SampleLight, heap settings were: for CC2538, all
+   configurations = 6Kb; for CC2530, Coordinator/Router = 3Kb, EndDevice = 2Kb.
+   See "Z-Stack Developer's Guide" for details on profiling heap memory usage.
+
+ - Memory sizes (Flash/RAM) are shown below for the 3 ZigBee device types on
+   various MCU and RF platforms with ZigBee-PRO enabled and Security enabled.
+   See the "Z-Stack User's Guide" for more details on the platform of interest.
+
+   CC2530EM on SmarfRF05EB
+   =======================
+   Coordinator  201.2K / 7.4K
+   Router       202.2K / 7.4K
+   End-Device   166.9K / 5.3K
+
+   CC2538EM on SmarfRF06EB
+   =======================
+   Coordinator  106.6K / 13.7K
+   Router       107.7K / 13.7K
+   End-Device    86.2K / 12.3K
+
+
+Known Issues:
+ - The ZAP sample applications retain the older format (from the Home-1.1.1
+   release), so they do not provide EZ-Mode commissioning.
+
+ - To disable security at build time, use the "SECURE=0" compile option. Do
+   not attempt to disable security by setting the SECURITY_LEVEL to zero.
+
+ - The ZDO Complex Descriptor is not supported.
+
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------

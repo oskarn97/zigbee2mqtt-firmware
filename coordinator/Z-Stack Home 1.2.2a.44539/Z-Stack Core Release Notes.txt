@@ -1,0 +1,300 @@
+Texas Instruments, Inc.
+
+Z-Stack Core Release Notes
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+Version 2.6.3a
+October 16, 2015
+
+
+Notices:
+ - Z-Stack 2.6.3 has been certified as a ZigBee Compliant Platform (ZCP) for
+   the devices, and toolchain versions listed below.
+
+ - Z-Stack for the CC2530/CC2531 platforms has been built and tested with
+   IAR's CLIB library, which provides a light-weight C library which does not
+   support Embedded C++. Use of DLIB is not recommended for those platforms.
+   Z-Stack for CC2538 platform has been tested with the DLIB library.
+
+ - Z-Stack projects specify compile options in two ways: (1) "-D" statements
+   in f8wConfig.cfg and other *.cfg files, (2) entries in the IDE Compiler
+   Preprocessor Defined Symbols. When using the EW8051 or EW430 compilers,
+   settings made in the IDE will override settings in the *.cfg files. When
+   using the EWARM compiler, settings in the *.cfg files will override any
+   made in the IDE.
+
+ - When programming devices for the first time with this release, the entire
+   Flash memory should be erased. For the CC2530/CC2531 and EXP5438 platforms,
+   select "Erase Flash" in the "Debugger->Texas Instruments->Download" tab of
+   the project options. For CC2538 devices, select "Project->Download->Erase
+   Memory" tab of the project options.
+
+ - Application, library, and hex files were built/tested with the following
+   versions of IAR tools and may not work with different IAR tool versions:
+     - CC2538 + SRF06EB:  EWARM 7.40.2  (7.40.2.8570)
+     - CC2530 + SRF05EB:  EW8051 9.10.1 (9.10.1.2146)
+     - CC2530 + EXP5438:  EW430 6.20.1  (6.20.1.931)
+
+ - Foundation software library files for the CC2538 include the following:
+     - bsp.lib, version 1.3.1
+     - driverlib.lib, version 1.3.1
+     - usblib.lib, version 1.0.1
+
+
+Changes:
+ Version 2.6.3a:
+ - [6975] Changed ZDP_MgmtPermitJoinReq() to also check the destination address
+   mode for "AddrBroadcast" when deciding whether to "send to self".
+
+ Version 2.6.3:
+ - [6357] A new Monitor-Test command has been added to provide parameters for
+   the new enhanced rejoin mechanism. See section 3.12.1.33 of the "Z-Stack
+   Monitor and Test API" document for details on ZDO_SET_REJOIN_PARAMETERS.
+
+ - [6180] Added the function ZDApp_ChangeState() to enhance processing of
+   'devState' changes and setting the ZDO event to send App notifications.
+
+ - [6122] Enhanced the leave mechanism to retain NV information when the
+   leave request is with rejoin=1 and the device does not reset, allowing it
+   to preserve volatile application data.
+
+ - [6079] Improved handling of the situation where the original parent of a
+   sleeping End-Device misses the Device Announcement when the child changes
+   its parent. This provides faster recovery than waiting for Child Aging.
+
+ - [6078] Implemented a Parent Announce mechanism for routers to exchange two
+   new ZDO messages specified by R21 Child Management. The new "Parent_annce"
+   and "Parent_annce_rsp" messages are used to determine which is the real
+   parent router of specific child End-Devices.
+
+ - [5956] Reduced memory usage in End-Device builds by removing un-necessary
+   references to the Associated Device list.
+
+ - [5476] Implemented the "enhanced" rejoin mechanism for aged out End-Devices
+   as suggested by the R21 specification. An End-Device can try both Secure
+   Rejoin and TC Rejoin to rejoin a network after it has been aged out and
+   told to leave.
+
+ - [5475] Implemented Orphan Scan Notification as the child aging keep-alive
+   mechanism required by the R21 specification.
+
+ - [5474] Implemented timeout establishment for the child aging mechanism in
+   the R21 specification. This includes End-Devices sending the new "End
+   Device Timeout Request" command once they have joined the network.
+
+ - [5472] Updated neighbor table behavior as needed to support the child
+   aging mechanism in the R21 specification.
+
+ - [5471] Added NIB elements, stored in Z-Stack "zg" variables, as required to
+   support the child aging mechanism in the R21 specification.
+
+ - [5470] Moved EndDeviceTimeout Request and Response commands from ZDO to NWK
+   layer as required in the R21 specification.
+
+ - [5468] Removed the ZIGBEE_CHILD_AGING compile flag from Z-Stack code since
+   "Child Aging and Recovery Protocol" becomes a mandatory feature in the R21
+   specification.
+   
+ - [5467] Implemented End-Device Initiator functionality as required for the
+   child aging feature in the approved R21 specification.
+
+ - [5217] Modified the NWK message buffer system to delete queued messages for
+   a non-RX_ON_IDLE device when a rejoin request is received from it. Queued
+   messages are also deleted for a child (non-parent) when a leave indication
+   is received for it.
+
+ - [5168] Changed the NLME_SetPollRate() function to accept a 32-bit timer
+   parameter, allowing for polling intervals longer than 65.535 seconds. The
+   variable 'zgPollRate' was changed to 32-bit, along with the associated
+   NV item. Added backward-compatible MT support forthe old 16-bit NV item.
+
+ - [4583] Modified Coordinator network start-up behavior to save the selected
+   PanID and other NIB information to Non-Volatile memory before any child
+   device associates to it. If the Coordinator has a reset while waiting for
+   other devices to join, it will retain the original PanID.
+
+
+Bug Fixes:
+ Version 2.6.3a:
+ - [6970] Fixed a problem where a non-sleeping End-Device rejoined the network
+   (via Rejoin Request) to a different parent because the old parent had left
+   the network - the End-Device continued to send Device Announce to the old
+   parent after the old parent had also rejoined via Rejoin Request.
+
+ - [6967] Fixed a problem where a non-sleeping End-Device rejoined the network
+   via Rejoin Request, to the same parent after the parent had left the network
+   and come back via MAC Association - the End-Device would start to poll the
+   parent at random intervals, observed in a range of 0.10 to 11 seconds.
+
+ - [6957] Corrected the zcl_ProcessMessageMSG() callback to reject an incoming
+   message when the minimum command data length is not met.
+
+ - [6951] Removed a compile error in zclGeneral_ProcessInGroupsServer() that
+   would occur when ZCL_SCENES was not enabled when ZCL_GROUPS was.
+   
+ - [6950] Fixed a problem where a router with two neighbors in the Link Status
+   (one with Incoming/Outgoing cost = MAX_LINK_COST) would not send any packet
+   to the neighbor that had MAX_LINK_COST status.
+
+ - [6935] Fixed a problem in the network message buffering system where an End-
+   Device, with POWER_SAVING enabled, could mistakenly enter "Deep Sleep" mode
+   (no timer events scheduled) when a buffer timer just transitioned to expired.
+
+ - [6917] Added the function APS_RemoveDupRej() to remove an entry from the APS
+   duplicate message rejection table. 
+
+ - [6916] Fixed an issue where an orphaned End-Device could accept Coordinator
+   Realignment from a ZigBee Coordinator that was not its original parent and
+   later would ignore the Realignment from its original parent, stopping normal
+   communication with that parent. See macRadioStopScan() for change details.
+
+ - [6902] Fixed a problem where an End-Device would fail to rejoin the network
+   after missing a NWK key change. The functions ZDApp_ProcessNetworkJoin() and
+   ZDO_SyncIndicationCB() were modified to improve rejoin backoff operation.
+
+ - [6897] Corrected an issue for End-Devices where the security frame counter
+   would be reset to zero each time there was a rejoin - causing the parent to
+   ignore messages from the End-Device. See ZDApp_ProcessOSALMsg() for details.
+
+ - [6887] Fixed a problem where retries of a ZCL command with APS ACK enabled
+   would be sent with APS ACK disabled, resulting in a DataConfirm with the
+   wrong transaction ID.
+
+ - [6883] Modified ZDO_JoinIndicationCB() and ZDO_LeaveInd() to fix a problem
+   where an always-on End-Device would leave the network when its parent was
+   asked to leave without rejoin and removeChildren was set to FALSE.
+
+ - [6842] Reverted the optimization made in [6079] - in certain circumstances,
+   the End-Device could become "stranded" in the network without a parent.
+
+ - [6771] Fixed a problem with many-to-one routing where a 'random neighbor'
+   with worst possible link cost would not be selected when no other neighbor
+   was available.
+
+ - [6737] Fixed a problem, introduced with [5455], where the AF Transaction
+   ID would get overwritten by an APS counter, causing the transID of the
+   AF_DATA_CONFIRM to not match the one sent with AF_DATA_REQUEST.
+
+ - [5024] Fixed a problem in ZDO_ProcessMgmtLqiReq() where the IEEE address
+   would be returned as 0xFFFFFFFFFFFFFFFF WHEN the device was found in the
+   neighbor table instead of the associated device table.
+
+ Version 2.6.3:
+ - [6365] Fixed a problem where an UpdateDevice message for a leaving device
+   would only be sent to the Trust Center by the parent router even if other
+   routers at radius=1 heard the broadcast LeaveIndication. The UpdateDevice
+   message would not get delivered if the parent router was turned off.
+
+ - [6346] Fixed a race condition that could occur when an End-device sent two
+   NWK Rejoin Requests to a potential parent and didn't received the Rejoin
+   Response. The End-device would stop polling and could never rejoin until
+   the device was reset.
+
+ - [6231] Changed ZDApp_NVUpdate() to set an event, instead of a timer, for
+   End-Devices to save network parameters immediately to NV after it joins.
+
+ - [6165] Changed the definition of 0xFFFE as an invalid PanID to allow it
+   to be used - this would not allow TI devices to operate in a network with
+   that PanID, creating a potential inter-operability problem.
+
+ - [6153] Handled a rare situation where two parents have the same End-Device
+   in their association table with different short addresses and the former
+   parent sends a Coordinator Realignment with the former short address that
+   is different from the current short address of the End-Device.
+
+ - [6077] Fixed an issue where an End-Device Secure Rejoin failed because the
+   Update Device message could not be sent to the Trust Center and the parent
+   silently removed the End-Device from its associated device list, stopping
+   it from forwarding messages to the End-Device.
+
+ - [6070] Reduced the time for an End-Device to send orphan notification on
+   higher channels - now does not default to trying all 16 channels.
+
+ - [6043] Removed possible transmissions from a device that has been requested
+   to leave but is waiting for LEAVE_RESET_DELAY to reset. This eliminates the
+   "spurious" End-Device polling and Router link-status messages.
+
+ - [5783] Fixed a problem in the CC2530 MAC where a transmit packet is would
+   be "pended" during active packet reception but never got sent. Transmit
+   packets would not be sent until the device received its next packet.
+
+ - [5771] Enhanced RF error handling in the CC2538 MAC by also processing
+   strobe and synth lock errors. Refer to macMcuRfErrIsr() for details.
+
+ - [5770] Corrected RF error handling in the CC2538 MAC by also clearing the
+   error flag from the NVIC register. Refer to macMcuRfErrIsr() for details.
+
+ - [5698] Fixed a problem where a child was aged out of the child table and
+   sent a leave command, it performed a MAC association. If the association
+   permit was false it would not rejoin the network and find a new parent.
+
+ - [5696] Fixed a problem on CC2538 devices where memory area for customer
+   commissioning of IEEE address (CCA) would be filled with zeroes, causing
+   the device to wake up with a bogus IEEE address of 0x0000000000000000 in
+   the secondary location, preventing use of the primary IEEE address.
+
+ - [5626] Fixed a problem where an RX-Always-On End-Device saw a DeviceAnnce,
+   its parent could be removed from the neighbor table, resulting in sending
+   NwkStatus "No Route Available" when it receives messages from its parent.
+
+ - [5563] Improved End-Device power consumption by turning off the receiver
+   sooner after receiving a MAC ACK.
+
+ - [5455] Fixed the APS retransmission mechanism to increment the APS frame
+   counter for each retry and for each APS ACK.
+
+ - [5270] Fixed a problem with Many-To-One routing where the routing table
+   entry was not properly freed even when the concentrator left the network.
+
+ - [5067] Improved sleeping End-Device power consumption by allowing it to
+   sleep while waiting for an APS ACK. Previously, it would not sleep until
+   it revived the ACK or exhausted its APS retries.
+
+ - [4966] Fixed a scenario that once a Many-To-One (MTO) route discovery was
+   complete and every router had the MTO routing entry to the concentrator, a
+   newly joined device that hadn't yet participated in the MTO route discovery
+   was not able to send a packet to the concentrator until it got the MTO
+   routing entry by next MTO route discovery request from the concentrator.
+
+ - [4811] Fixed a problem where a child device changed its NWK address because
+   itr rejoined the network via MAC association. It was no longer able to do
+   secure communications because it had reset the frame counter to zero. 
+
+ - [4579] Fixed a problem with PA/LNA devices where the control signals for
+   the PA/LNA would not works correctly after the radio woke up from sleep. 
+
+ - [4504] Fixed a problem where a device that received a Leave Request with
+   Rejoin set to true, would clear its NV information, making it not capable
+   of rejoining the previous network without doing MAC association.
+
+ - [4454] Fixed a problem where an End-Device would not try to rejoin its
+   parent if the parent's end-device capacity status was set to zero.
+
+ - [4453] Fixed a problem where an End-Device would not try to rejoin its
+   parent if the parent's associate permit status was set to false.
+
+ - [4225] Fixed a Monitor-Test (MT) problem where the device did not respond
+   to a SYS_OSAL_NV_READ command from Z-Tool for NV item 0x0022. MT response
+   would be dropped silently if the requested data block was larger than the
+   serial TX buffer. 
+
+ - [4035] Fixed a problem where an End-Device would get confused after reset
+   in the following scenario: (1) two Coordinators, A and B, have networks on
+   different channels, (2) End-Device joins network A on lower channel, (3)
+   Coordinator A is turned off, (4) End-Device resets, clears NV, and joins
+   Coordinator B, (5) Coordinator A is turned back on, (6) reset End-device
+   and observe that it sent rejoin request to Coordinator A instead of B.
+
+ - [3366] Fixed a Monitor-Test (MT) problem where the device did not respond
+   to a UTIL_ZCL_KEY_EST_SIGN command from Z-Tool.
+
+
+Known Issues:
+ - Processing of Manufacturer Specific foundation commands is not supported.
+
+ - The ZDO Complex Descriptor is not supported.
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
