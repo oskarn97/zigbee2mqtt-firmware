@@ -3761,7 +3761,7 @@
                     <state>POWER_SAVING</state>
                     <state>ASSERT_RESET</state>
                     <state>FAKE_CRC_SHDW</state>
-                    <state>xTC_LINKKEY_JOIN</state>
+                    <state>TC_LINKKEY_JOIN</state>
                 </option>
                 <option>
                     <name>CCPreprocFile</name>
