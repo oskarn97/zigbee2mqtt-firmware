@@ -16,3 +16,10 @@
 **/Obj/*.pbd.*  
 **/Obj/*.pbi  
 **/Obj/*.pbi.*  
+
+# Output
+*.r51
+*.s51
+*.lst
+*.a51
+*.map
