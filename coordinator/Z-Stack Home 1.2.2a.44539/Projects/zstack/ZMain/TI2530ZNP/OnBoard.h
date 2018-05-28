@@ -228,7 +228,7 @@ extern uint8 znpCfg1;
 // Empirical number - compile the project to see what XDATA is left un-used and give it to the HEAP
 // TC_LINKKEY_JOIN brings in the bigger demand for ZDSECMGR_TC_DEVICE_MAX=16 vice 1.
 #if defined TC_LINKKEY_JOIN
-#define MAXMEMHEAP  2170
+#define MAXMEMHEAP  2310
 #else
 #define MAXMEMHEAP  2310
 #endif
