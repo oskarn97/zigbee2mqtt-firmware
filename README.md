@@ -1,16 +1,19 @@
-## CC2531 firmware
+## Firmware for zigbee sniffers
 
-Firmware for CC2531 USB sniffer. This repository is complementary for [Zigbee2MQTT](https://github.com/Koenkk/zigbee2mqtt). 
+Firmware for various sniffers like:
+- CC2531 USB sniffer
+- CC2530 with either PCB antenna OR external antenna
+- CC2530 with CC2591 RF frontend and external antenna
+- CC2530 with RFX2401 RF frontend and external antenna
 
-For more details on how this firmware is used please visit [Getting started](https://github.com/Koenkk/zigbee2mqtt/wiki/Getting-started).
+There are two types of firmware: [coordinator](https://github.com/Koenkk/zigbee2mqtt/wiki/Supported-sniffer-devices#zigbee-coordinator) and [router](https://github.com/Koenkk/zigbee2mqtt/wiki/Supported-sniffer-devices#zigbee-router)
 
+This repository is complementary for [Zigbee2MQTT](https://github.com/Koenkk/zigbee2mqtt).
 
-## Structure
+## Flashing
 
-- `scr/cooridnator` contains Texas Instruments, Inc. Z-Stack Home used for building the firmware
-- `firmware` contains firmware hex binary files
+For more details on how to flash firmware on your device please check [Getting started](https://github.com/Koenkk/zigbee2mqtt/wiki/Getting-started) or [Alternative flashing](https://github.com/Koenkk/zigbee2mqtt/wiki/Alternative-firmware-flashing-methods).
 
-## Notes
-- Currently only coordinator firmware is available
-- A router firmware will be available in the future
-- `stable` folder inside `firmware` is recommended
+## Testing
+
+There might be from time to time testing firmware. Please check [branches](https://github.com/Koenkk/zigbee2mqtt-firmware/branches) to see if there is anything in progress.
