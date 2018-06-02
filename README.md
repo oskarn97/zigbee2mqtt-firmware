@@ -17,3 +17,12 @@ For more details on how to flash firmware on your device please check [Getting s
 ## Testing
 
 There might be from time to time testing firmware. Please check [branches](https://github.com/Koenkk/zigbee2mqtt-firmware/branches) to see if there is anything in progress.
+
+## Useful docs
+* [CC2531 based router](http://ptvo.info/cc2531-based-router-firmware-136/)
+* [CC2530 based Zigbee coordinator and router](http://ptvo.info/cc2530-based-zigbee-coordinator-and-router-112/)
+
+## Credits
+* [ptvo](https://github.com/ptvoinfo)
+* [kirovilya](https://github.com/kirovilya)
+* [Koenkk](https://github.com/Koenk)
