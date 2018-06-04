@@ -1,0 +1,529 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// IAR C/C++ Compiler V10.10.1.4655 for 8051              16/Feb/2018  22:13:13
+// Copyright 2004-2017 IAR Systems AB.
+// Evaluation license - IAR Embedded Workbench for 8051, Evaluation version 10.10
+//
+//    Core               =  plain
+//    Code model         =  banked
+//    Data model         =  large
+//    Calling convention =  xdata reentrant
+//    Constant location  =  data_rom
+//    Dptr setup         =  1,16
+//                          
+//    Source file        =  
+//        C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Components\hal\target\CC2530USB\usb\library\cc2531\usb_suspend.c
+//    Command line       =  
+//        -f C:\Users\Oskar\AppData\Local\Temp\EW6E0B.tmp ("C:\Texas
+//        Instruments\Z-Stack Home
+//        1.2.2a.44539\Components\hal\target\CC2530USB\usb\library\cc2531\usb_suspend.c"
+//        -D FEATURE_SYSTEM_STATS -D CC2531ZNP -D POWER_SAVING -D ASSERT_RESET
+//        -D FAKE_CRC_SHDW -D xTC_LINKKEY_JOIN -lC "C:\Texas
+//        Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\CC2531-ProdHex\List" -lA
+//        "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\CC2531-ProdHex\List"
+//        --diag_suppress Pe001,Pa010 -o "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\CC2531-ProdHex\Obj" -e
+//        --debug --core=plain --dptr=16,1 --data_model=large
+//        --code_model=banked --calling_convention=xdata_reentrant
+//        --place_constants=data_rom --nr_virtual_regs 16 -f "C:\Texas
+//        Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\Source\znp.cfg"
+//        (-DMAC_CFG_APP_PENDING_QUEUE=TRUE
+//        "-DZSTACK_DEVICE_BUILD=(DEVICE_BUILD_COORDINATOR |
+//        DEVICE_BUILD_ROUTER | DEVICE_BUILD_ENDDEVICE)" -DNWK_AUTO_POLL
+//        -DZNP_RUN_WDOG=FALSE -DZNP_UART_BAUD=HAL_UART_BR_115200 -DZIGBEEPRO
+//        -DZIGBEE_FRAGMENTATION -DINTER_PAN -DOSAL_CLOCK -DOSAL_SAPI=FALSE
+//        -DSAPI_CB_FUNC=FALSE -DHOLD_AUTO_START -DNV_RESTORE -DNV_INIT
+//        -DNUM_DISC_ATTEMPTS=0 -DTC_LINKKEY_JOIN -DMT_UTIL_FUNC -DMT_SYS_FUNC
+//        -DMT_AF_FUNC -DMT_SAPI_FUNC -DMT_SAPI_CB_FUNC -DMT_ZDO_CB_FUNC
+//        -DMT_ZDO_FUNC -DMT_ZDO_MGMT -DMT_ZDO_EXTENSIONS -DMT_APP_FUNC) -f
+//        "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\Tools\CC2530DB\f8wConfig.cfg"
+//        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+//        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+//        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+//        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+//        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+//        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+//        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+//        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+//        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+//        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07,
+//        0x09, 0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C,
+//        0x0D}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+//        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+//        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+//        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000)
+//        -f "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\Tools\CC2530DB\f8wZCL.cfg"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\" -I "C:\Texas
+//        Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\Source\" -I "C:\Texas
+//        Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\Source\" -I "C:\Texas
+//        Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\SE\Source\" -I
+//        "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\Utilities\BootLoad\Source\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\ZMain\TI2530ZNP\" -I
+//        "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530USB\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530USB\usb\library\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530USB\usb\library\cc2531\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530USB\usb\class_cdc\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\include\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\high_level\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\low_level\srf04\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mt\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\ecc\binary163\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\ecc\binary283\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\saddr\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\sdata\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\af\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\nwk\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sapi\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sec\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sys\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\zcl\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\zdo\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\zmac\"
+//        -I "C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\zmac\f8w\"
+//        -Ohz --require_prototypes --no_code_motion)
+//    Locale             =  German_Germany.1252
+//    List file          =  
+//        C:\Texas Instruments\Z-Stack Home
+//        1.2.2a.44539\Projects\zstack\ZNP\CC253x\CC2531-ProdHex\List\usb_suspend.s51
+//
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME usb_suspend
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__register_banks", "*"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC `??usbsuspDoRemoteWakeup::?relay`
+        FUNCTION `??usbsuspDoRemoteWakeup::?relay`,0203H
+        PUBWEAK P2IFG
+        PUBWEAK _A_IEN0
+        PUBWEAK _A_IRCON2
+        PUBLIC pFnSuspendEnterHook
+        PUBLIC pFnSuspendExitHook
+        PUBLIC usbsuspDoRemoteWakeup
+        FUNCTION usbsuspDoRemoteWakeup,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA_SP SP IDATA
+          CFI StackFrame CFA_PSP16 PSP16 XDATA
+          CFI StackFrame CFA_XSP16 XSP16 XDATA
+          CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+          CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+          CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+          CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+          CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+          CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+          CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+          CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+          CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+          CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+          CFI VirtualResource ?RET:24
+          CFI Resource ?BRET_EXT:8
+          CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+          CFI ResourceParts PSP16 PSPH, PSPL
+          CFI ResourceParts XSP16 XSPH, XSPL
+          CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-3
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B Undefined
+          CFI A Undefined
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 Undefined
+          CFI R1 Undefined
+          CFI R2 Undefined
+          CFI R3 Undefined
+          CFI R4 Undefined
+          CFI R5 Undefined
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI V8 SameValue
+          CFI V9 SameValue
+          CFI V10 SameValue
+          CFI V11 SameValue
+          CFI V12 SameValue
+          CFI V13 SameValue
+          CFI V14 SameValue
+          CFI V15 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?BRET_EXT Frame(CFA_SP, 3)
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon0
+        
+halMcuWaitMs        SYMBOL "halMcuWaitMs"
+`??halMcuWaitMs::?relay` SYMBOL "?relay", halMcuWaitMs
+usbsuspDoRemoteWakeup SYMBOL "usbsuspDoRemoteWakeup"
+`??usbsuspDoRemoteWakeup::?relay` SYMBOL "?relay", usbsuspDoRemoteWakeup
+
+        EXTERN `??halMcuWaitMs::?relay`
+        FUNCTION `??halMcuWaitMs::?relay`,00H
+        EXTERN halMcuWaitMs
+        FUNCTION halMcuWaitMs,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN usbfwData
+        EXTERN usbirqData
+
+// C:\Texas Instruments\Z-Stack Home 1.2.2a.44539\Components\hal\target\CC2530USB\usb\library\cc2531\usb_suspend.c
+//    1 /***********************************************************************************
+//    2 
+//    3     Filename:     usb_suspend.c
+//    4 
+//    5     Description:  USB library common functionality.
+//    6 
+//    7 ***********************************************************************************/
+//    8 
+//    9 /// \addtogroup module_usb_suspend
+//   10 /// @{
+//   11 #include "usb_firmware_library_headers.h"
+
+        ASEGN SFR_AN:DATA:NOROOT,08bH
+// unsigned char volatile __sfr P2IFG
+P2IFG:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0a8H
+// union <unnamed> volatile __sfr _A_IEN0
+_A_IEN0:
+        DATA8
+        DS 1
+
+        ASEGN SFR_AN:DATA:NOROOT,0e8H
+// union <unnamed> volatile __sfr _A_IRCON2
+_A_IRCON2:
+        DATA8
+        DS 1
+//   12 #include "hal_board.h"
+//   13 #include "hal_mcu.h"
+//   14 #include "hal_led.h"
+//   15 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//   16 __xdata VFPTR pFnSuspendEnterHook=  NULL;
+pFnSuspendEnterHook:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//   17 __xdata VFPTR pFnSuspendExitHook=   NULL;
+pFnSuspendExitHook:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//   18 
+//   19 #if HAL_UART_USB_SUSPEND
+//   20 extern void halEnterPowerMode(void);
+//   21 
+//   22 /** \brief Puts the chip into power mode 1 during USB suspend.
+//   23  *
+//   24  * This function must be called from main (i.e. not from interrupt context) upon the reception of a
+//   25  * \ref USBIRQ_EVENT_SUSPEND event. To comply with the USB specification, this must happen within 10 ms
+//   26  * after the event occurs. The chip will stay in power mode 1 until a USB resume or USB reset is detected
+//   27  * on the USB bus, or remote wakeup is used. During this period, the MCU can only run code from
+//   28  * interrupt context.
+//   29  */
+//   30 void usbsuspEnter(void)
+//   31 {
+//   32     if (pFnSuspendEnterHook!=NULL)
+//   33         pFnSuspendEnterHook();
+//   34 
+//   35     HAL_USB_INT_CLEAR();
+//   36     HAL_USB_INT_ENABLE();
+//   37 
+//   38     // Disable USB clock (PLL) before entering PM1
+//   39     HAL_USB_PLL_DISABLE();
+//   40     
+//   41     HAL_LED_CLR_1();
+//   42 
+//   43     do {
+//   44         // Enter PM1, in prescribed manner as explained in CC253x User's Guide
+//   45         SLEEPCMD = 0x05;
+//   46         halEnterPowerMode();
+//   47     } while ( usbirqData.inSuspend );
+//   48 
+//   49     // .... we are now up and running again
+//   50 
+//   51     // First make sure that the crystal oscillator is stable
+//   52     while (!CC2530_IS_XOSC_STABLE());
+//   53 
+//   54     // Restart the USB clock (PLL)
+//   55     HAL_USB_ENABLE();
+//   56 
+//   57     if (pFnSuspendExitHook!=NULL)
+//   58         pFnSuspendExitHook();
+//   59 } // usbsuspEnter
+//   60 #endif
+//   61 
+//   62 
+//   63 
+//   64 /** \brief Attempts USB remote wakeup.
+//   65  *
+//   66  * This function can be called from interrupt context while the USB device is suspend mode. If the device
+//   67  * is privileged to do so (see \c usbfwData.remoteWakeup and the \ref USBSR_EVENT_REMOTE_WAKEUP_ENABLED
+//   68  * and \ref USBSR_EVENT_REMOTE_WAKEUP_DISABLED events), remote wakeup will be performed. Note that this
+//   69  * function will block for 10 ms while the resume signal is set on the bus. Note: This function can only
+//   70  * be called when the 48 MHz XOSC is stable.
+//   71  *
+//   72  * \return
+//   73  *     \c TRUE if the remote wakeup was performed (the privilege had been granted), otherwise \c FALSE
+//   74  *     (the device is still in suspend mode).
+//   75  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//   76 uint8 usbsuspDoRemoteWakeup(void)
+usbsuspDoRemoteWakeup:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function usbsuspDoRemoteWakeup
+        CODE
+//   77 {
+        FUNCALL usbsuspDoRemoteWakeup, halMcuWaitMs
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV       A,#-0x9
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+//   78    extern void halMcuWaitMs(uint16 msec);
+//   79    halIntState_t   intState;
+//   80 
+//   81    // Make sure that it's OK
+//   82    if (!usbfwData.remoteWakeup) return FALSE;
+        MOV       DPTR,#usbfwData + 18
+        MOVX      A,@DPTR
+        JNZ       ??usbsuspDoRemoteWakeup_0
+        MOV       R1,#0x0
+        SJMP      ??usbsuspDoRemoteWakeup_1
+//   83 
+//   84    HAL_ENTER_CRITICAL_SECTION(intState);
+??usbsuspDoRemoteWakeup_0:
+        MOV       R6,0xa8+0x0
+        CLR       0xa8.7
+//   85 
+//   86    // Make sure that the suspend loop does not power down the chip again
+//   87    usbirqData.inSuspend = FALSE;
+        MOV       usbirqData + 2,#0x0
+//   88 
+//   89    // Perform remote wakeup by holding the USB resume signal for 10 ms
+//   90    USBPOW |= USBPOW_RESUME;
+        MOV       DPTR,#0x6201
+        MOVX      A,@DPTR
+        SETB      0xE0 /* A   */.2
+        MOVX      @DPTR,A
+//   91    halMcuWaitMs(10);
+        ; Setup parameters for call to function halMcuWaitMs
+        MOV       R2,#0xa
+        MOV       R3,#0x0
+        LCALL     `??halMcuWaitMs::?relay`; Banked call to: halMcuWaitMs
+//   92    USBPOW &= ~USBPOW_RESUME;
+        MOV       DPTR,#0x6201
+        MOVX      A,@DPTR
+        CLR       0xE0 /* A   */.2
+        MOVX      @DPTR,A
+//   93 
+//   94    // Clear the interrupt flag
+//   95    HAL_USB_INT_CLEAR();
+        MOV       0x8b,#0x0
+        CLR       0xe8.0
+//   96 
+//   97    HAL_EXIT_CRITICAL_SECTION(intState);
+        MOV       A,R6
+        MOV       C,0xE0 /* A   */.7
+        MOV       0xa8.7,C
+//   98 
+//   99    return TRUE;
+        MOV       R1,#0x1
+??usbsuspDoRemoteWakeup_1:
+        MOV       R7,#0x1
+        LJMP      ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock0
+        REQUIRE _A_IEN0
+        REQUIRE P2IFG
+        REQUIRE _A_IRCON2
+//  100 
+//  101 } // usbsuspDoRemoteWakeup
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??usbsuspDoRemoteWakeup::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    usbsuspDoRemoteWakeup
+
+        END
+//  102 
+//  103 
+//  104 
+//  105 //@}
+//  106 /*
+//  107 +------------------------------------------------------------------------------
+//  108 |  Copyright 2004-2009 Texas Instruments Incorporated. All rights reserved.
+//  109 |
+//  110 |  IMPORTANT: Your use of this Software is limited to those specific rights
+//  111 |  granted under the terms of a software license agreement between the user who
+//  112 |  downloaded the software, his/her employer (which must be your employer) and
+//  113 |  Texas Instruments Incorporated (the "License"). You may not use this Software
+//  114 |  unless you agree to abide by the terms of the License. The License limits
+//  115 |  your use, and you acknowledge, that the Software may not be modified, copied
+//  116 |  or distributed unless embedded on a Texas Instruments microcontroller or used
+//  117 |  solely and exclusively in conjunction with a Texas Instruments radio
+//  118 |  frequency transceiver, which is integrated into your product. Other than for
+//  119 |  the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//  120 |  works of, modify, distribute, perform, display or sell this Software and/or
+//  121 |  its documentation for any purpose.
+//  122 |
+//  123 |  YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//  124 |  PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//  125 |  INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//  126 |  NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//  127 |  TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//  128 |  NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//  129 |  LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES INCLUDING
+//  130 |  BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE OR
+//  131 |  CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT OF
+//  132 |  SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//  133 |  (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//  134 |
+//  135 |  Should you have any questions regarding your right to use this Software,
+//  136 |  contact Texas Instruments Incorporated at www.TI.com.
+//  137 |
+//  138 +------------------------------------------------------------------------------
+//  139 */
+// 
+// 60 bytes in segment BANKED_CODE
+//  6 bytes in segment BANK_RELAYS
+//  3 bytes in segment SFR_AN
+//  4 bytes in segment XDATA_Z
+// 
+//  6 bytes of CODE     memory
+//  0 bytes of DATA     memory (+ 3 bytes shared)
+// 60 bytes of HUGECODE memory
+//  4 bytes of XDATA    memory
+//
+//Errors: none
+//Warnings: none

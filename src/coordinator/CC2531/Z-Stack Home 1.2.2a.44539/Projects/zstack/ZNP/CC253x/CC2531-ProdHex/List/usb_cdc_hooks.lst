@@ -1,0 +1,556 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               16/Feb/2018  22:13:13
+# Copyright 2004-2017 IAR Systems AB.
+# Evaluation license - IAR Embedded Workbench for 8051, Evaluation version 10.10
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Components\hal\target\CC2530USB\usb\class_cdc\usb_cdc_hooks.c
+#    Command line       =  
+#        -f C:\Users\Oskar\AppData\Local\Temp\EW6C02.tmp ("C:\Texas
+#        Instruments\Z-Stack Home
+#        1.2.2a.44539\Components\hal\target\CC2530USB\usb\class_cdc\usb_cdc_hooks.c"
+#        -D FEATURE_SYSTEM_STATS -D CC2531ZNP -D POWER_SAVING -D ASSERT_RESET
+#        -D FAKE_CRC_SHDW -D xTC_LINKKEY_JOIN -lC "C:\Texas Instruments\Z-Stack
+#        Home 1.2.2a.44539\Projects\zstack\ZNP\CC253x\CC2531-ProdHex\List" -lA
+#        "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\CC2531-ProdHex\List"
+#        --diag_suppress Pe001,Pa010 -o "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\CC2531-ProdHex\Obj" -e --debug
+#        --core=plain --dptr=16,1 --data_model=large --code_model=banked
+#        --calling_convention=xdata_reentrant --place_constants=data_rom
+#        --nr_virtual_regs 16 -f "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\Source\znp.cfg"
+#        (-DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        "-DZSTACK_DEVICE_BUILD=(DEVICE_BUILD_COORDINATOR | DEVICE_BUILD_ROUTER
+#        | DEVICE_BUILD_ENDDEVICE)" -DNWK_AUTO_POLL -DZNP_RUN_WDOG=FALSE
+#        -DZNP_UART_BAUD=HAL_UART_BR_115200 -DZIGBEEPRO -DZIGBEE_FRAGMENTATION
+#        -DINTER_PAN -DOSAL_CLOCK -DOSAL_SAPI=FALSE -DSAPI_CB_FUNC=FALSE
+#        -DHOLD_AUTO_START -DNV_RESTORE -DNV_INIT -DNUM_DISC_ATTEMPTS=0
+#        -DTC_LINKKEY_JOIN -DMT_UTIL_FUNC -DMT_SYS_FUNC -DMT_AF_FUNC
+#        -DMT_SAPI_FUNC -DMT_SAPI_CB_FUNC -DMT_ZDO_CB_FUNC -DMT_ZDO_FUNC
+#        -DMT_ZDO_MGMT -DMT_ZDO_EXTENSIONS -DMT_APP_FUNC) -f "C:\Texas
+#        Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07,
+#        0x09, 0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C,
+#        0x0D}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000)
+#        -f "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\Tools\CC2530DB\f8wZCL.cfg"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\" -I "C:\Texas
+#        Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\Source\" -I "C:\Texas
+#        Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\Source\" -I "C:\Texas
+#        Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\SE\Source\" -I "C:\Texas
+#        Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\Utilities\BootLoad\Source\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\ZMain\TI2530ZNP\" -I
+#        "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530USB\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530USB\usb\library\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530USB\usb\library\cc2531\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530USB\usb\class_cdc\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\include\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\high_level\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\low_level\srf04\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mt\" -I
+#        "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\ecc\binary163\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\ecc\binary283\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\saddr\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\sdata\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\af\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\nwk\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sapi\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sec\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sys\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\zcl\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\zdo\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\zmac\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\zmac\f8w\"
+#        -Ohz --require_prototypes --no_code_motion)
+#    Locale             =  German_Germany.1252
+#    List file          =  
+#        C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\CC2531-ProdHex\List\usb_cdc_hooks.lst
+#    Object file        =  
+#        C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\CC2531-ProdHex\Obj\usb_cdc_hooks.r51
+#
+###############################################################################
+
+C:\Texas Instruments\Z-Stack Home 1.2.2a.44539\Components\hal\target\CC2530USB\usb\class_cdc\usb_cdc_hooks.c
+      1          /***********************************************************************************
+      2          
+      3              Filename: usb_cdc_hooks.c
+      4          
+      5              Contains the necessary hook functions for various USB request processing
+      6              that is featured from the USB firmware library. Some
+      7              functions are empty.
+      8          
+      9          ***********************************************************************************/
+     10          
+     11          
+     12          /**********************************************************************************
+     13           * INCLUDES
+     14           */
+     15          
+     16          #include "usb_cdc.h"
+     17          #include "usb_cdc_hooks.h"
+     18          #include "usb_firmware_library_headers.h"
+     19          
+     20          #include "hal_types.h"
+     21          
+     22          /* Global data */
+     23          
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     24          CDC_LINE_CODING_STRUCTURE currentLineCoding;
+   \                     currentLineCoding:
+   \   000000                DS 7
+   \   000007                REQUIRE __INIT_XDATA_Z
+     25          
+     26          
+     27          // *********************************************************************************
+     28          // All Hooks and functions required by the USB library.
+     29          // *********************************************************************************
+     30          
+     31          // **************** Process USB class requests with OUT data phase *****************
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     32          void usbcrHookProcessOut(void)
+   \                     usbcrHookProcessOut:
+     33          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     34             // Process USB class requests with OUT data phase, or stall endpoint 0 when unsupported
+     35             if (usbSetupHeader.request == CDC_SET_CONTROL_LINE_STATE) {
+   \   000004   90....       MOV       DPTR,#usbSetupHeader + 1
+   \   000007   E0           MOVX      A,@DPTR
+   \   000008   6422         XRL       A,#0x22
+   \   00000A   7008         JNZ       ??usbcrHookProcessOut_0
+     36                 // Control line state from host
+     37                if(usbfwData.ep0Status == EP_IDLE)
+   \   00000C   90....       MOV       DPTR,#usbfwData + 7
+   \   00000F   E0           MOVX      A,@DPTR
+   \   000010   701A         JNZ       ??usbcrHookProcessOut_1
+     38                {
+     39                   usbfwData.ep0Status = EP_RX;
+   \   000012   8011         SJMP      ??usbcrHookProcessOut_2
+     40                }
+     41          
+     42          
+     43             } else if(usbSetupHeader.request == CDC_SET_LINE_CODING) {
+   \                     ??usbcrHookProcessOut_0:
+   \   000014   E0           MOVX      A,@DPTR
+   \   000015   6420         XRL       A,#0x20
+   \   000017   90....       MOV       DPTR,#usbfwData + 7
+   \   00001A   700D         JNZ       ??usbcrHookProcessOut_3
+     44          
+     45                if(usbfwData.ep0Status == EP_IDLE)
+   \   00001C   E0           MOVX      A,@DPTR
+   \   00001D   700D         JNZ       ??usbcrHookProcessOut_1
+     46                {
+     47                   usbSetupData.pBuffer = (uint8 __xdata *) &currentLineCoding;
+   \   00001F   12....       LCALL     ?Subroutine1 & 0xFFFF
+     48                   usbfwData.ep0Status = EP_RX;
+   \                     ??CrossCallReturnLabel_0:
+   \   000022   90....       MOV       DPTR,#usbfwData + 7
+   \                     ??usbcrHookProcessOut_2:
+   \   000025   7402         MOV       A,#0x2
+   \   000027   8002         SJMP      ??usbcrHookProcessOut_4
+     49                }
+     50                else if(usbfwData.ep0Status == EP_RX) { }
+     51             }
+     52             // Unknown request?
+     53             else {
+     54                usbfwData.ep0Status = EP_STALL;
+   \                     ??usbcrHookProcessOut_3:
+   \   000029   7404         MOV       A,#0x4
+   \                     ??usbcrHookProcessOut_4:
+   \   00002B   F0           MOVX      @DPTR,A
+     55             }
+     56          }
+   \                     ??usbcrHookProcessOut_1:
+   \   00002C   80..         SJMP      ??Subroutine2_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   90....       MOV       DPTR,#usbSetupData
+   \   000003   74..         MOV       A,#currentLineCoding & 0xff
+   \   000005   F0           MOVX      @DPTR,A
+   \   000006   A3           INC       DPTR
+   \   000007   74..         MOV       A,#(currentLineCoding >> 8) & 0xff
+   \   000009   F0           MOVX      @DPTR,A
+   \   00000A   A3           INC       DPTR
+   \   00000B   E4           CLR       A
+   \   00000C   F0           MOVX      @DPTR,A
+   \   00000D   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine2_0:
+   \   000000   D083         POP       DPH
+   \   000002   D082         POP       DPL
+   \   000004   02....       LJMP      ?BRET
+     57          
+     58          // **************** Process USB class requests with IN data phase ******************
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     59          void usbcrHookProcessIn(void)
+   \                     usbcrHookProcessIn:
+     60          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     61             // Process USB class requests with IN data phase, or stall endpoint 0 when unsupported
+     62             if (usbSetupHeader.request == CDC_GET_LINE_CODING) {
+   \   000004   90....       MOV       DPTR,#usbSetupHeader + 1
+   \   000007   E0           MOVX      A,@DPTR
+   \   000008   6421         XRL       A,#0x21
+   \   00000A   90....       MOV       DPTR,#usbfwData + 7
+   \   00000D   7013         JNZ       ??usbcrHookProcessIn_0
+     63                // First the endpoint status is EP_IDLE...
+     64                if (usbfwData.ep0Status == EP_IDLE) {
+   \   00000F   E0           MOVX      A,@DPTR
+   \   000010   7013         JNZ       ??usbcrHookProcessIn_1
+     65                   usbSetupData.pBuffer = (uint8 __xdata *) &currentLineCoding;
+   \   000012   12....       LCALL     ?Subroutine1 & 0xFFFF
+     66                   usbSetupData.bytesLeft = 7;
+   \                     ??CrossCallReturnLabel_1:
+   \   000015   A3           INC       DPTR
+   \   000016   7407         MOV       A,#0x7
+   \   000018   F0           MOVX      @DPTR,A
+   \   000019   A3           INC       DPTR
+   \   00001A   E4           CLR       A
+   \   00001B   F0           MOVX      @DPTR,A
+     67                   usbfwData.ep0Status = EP_TX;
+   \   00001C   90....       MOV       DPTR,#usbfwData + 7
+   \   00001F   04           INC       A
+   \   000020   8002         SJMP      ??usbcrHookProcessIn_2
+     68                   // Then the endpoint status is EP_TX (remember: we did that here when setting up the buffer)
+     69                } else if (usbfwData.ep0Status == EP_TX) {
+     70                   // usbfwData.ep0Status is automatically reset to EP_IDLE when returning to usbfwSetupHandler()
+     71                }
+     72             } else {
+     73                usbfwData.ep0Status = EP_STALL;
+   \                     ??usbcrHookProcessIn_0:
+   \   000022   7404         MOV       A,#0x4
+   \                     ??usbcrHookProcessIn_2:
+   \   000024   F0           MOVX      @DPTR,A
+     74             }
+     75          }
+   \                     ??usbcrHookProcessIn_1:
+   \   000025   80..         SJMP      ??Subroutine2_0
+     76          
+     77          // ********************************  Unsupported USB hooks *************************
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     78          void usbvrHookProcessOut(void) {usbfwData.ep0Status = EP_STALL; }
+   \                     usbvrHookProcessOut:
+   \   000000   80..         SJMP      ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004   90....       MOV       DPTR,#usbfwData + 7
+   \   000007   7404         MOV       A,#0x4
+   \   000009   F0           MOVX      @DPTR,A
+   \   00000A                REQUIRE ??Subroutine2_0
+   \   00000A                ; // Fall through to label ??Subroutine2_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     79          void usbvrHookProcessIn(void) {usbfwData.ep0Status = EP_STALL; }
+   \                     usbvrHookProcessIn:
+   \   000000   80..         SJMP      ?Subroutine0
+     80          
+     81          // ************************  unsupported/unhandled standard requests ***************
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     82          void usbsrHookSetDescriptor(void) { usbfwData.ep0Status = EP_STALL; }
+   \                     usbsrHookSetDescriptor:
+   \   000000   80..         SJMP      ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     83          void usbsrHookSynchFrame(void) { usbfwData.ep0Status = EP_STALL; }
+   \                     usbsrHookSynchFrame:
+   \   000000   80..         SJMP      ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     84          void usbsrHookClearFeature(void) { usbfwData.ep0Status = EP_STALL; }
+   \                     usbsrHookClearFeature:
+   \   000000                REQUIRE ?Subroutine0
+   \   000000                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     85          void usbsrHookSetFeature(void) { usbfwData.ep0Status = EP_STALL; }
+   \                     usbsrHookSetFeature:
+   \   000000   80..         SJMP      ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     86          void usbsrHookModifyGetStatus(uint8 recipient, uint8 index, uint16 __xdata *pStatus) { }
+   \                     usbsrHookModifyGetStatus:
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   02....       LJMP      ?BRET
+     87          
+     88          
+     89          // ************************ USB standard request event processing ******************
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     90          void usbsrHookProcessEvent(uint8 event, uint8 index)
+   \                     usbsrHookProcessEvent:
+     91          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     92             // Process relevant events, one at a time.
+     93             switch (event) {
+     94             case USBSR_EVENT_CONFIGURATION_CHANGING : //(the device configuration is about to change)
+     95                break;
+     96             case USBSR_EVENT_CONFIGURATION_CHANGED :// (the device configuration has changed)
+     97                break;
+     98             case USBSR_EVENT_INTERFACE_CHANGING ://(the alternate setting of the given interface is about to change)
+     99                break;
+    100             case USBSR_EVENT_INTERFACE_CHANGED : //(the alternate setting of the given interface has changed)
+    101                break;
+    102             case USBSR_EVENT_REMOTE_WAKEUP_ENABLED ://(remote wakeup has been enabled by the host)
+    103                break;
+    104             case USBSR_EVENT_REMOTE_WAKEUP_DISABLED ://(remote wakeup has been disabled by the host)
+    105                break;
+    106             case USBSR_EVENT_EPIN_STALL_CLEARED ://(the given IN endpoint's stall condition has been cleared the host)
+    107                break;
+    108             case USBSR_EVENT_EPIN_STALL_SET ://(the given IN endpoint has been stalled by the host)
+    109                break;
+    110             case USBSR_EVENT_EPOUT_STALL_CLEARED ://(the given OUT endpoint's stall condition has been cleared the host)
+    111                break;
+    112             case USBSR_EVENT_EPOUT_STALL_SET ://(the given OUT endpoint has been stalled by the PC)
+    113                break;
+    114             }
+    115          }
+   \   000000   02....       LJMP      ?BRET
+    116          
+    117          // ************************ USB interrupt event processing *************************
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    118          void usbirqHookProcessEvents(void)
+   \                     usbirqHookProcessEvents:
+    119          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    120              // Handle events that require immediate processing here
+    121          }
+   \   000000   02....       LJMP      ?BRET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbcrHookProcessOut::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbcrHookProcessOut
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbcrHookProcessIn::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbcrHookProcessIn
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbvrHookProcessOut::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbvrHookProcessOut
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbvrHookProcessIn::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbvrHookProcessIn
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbsrHookSetDescriptor::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbsrHookSetDescriptor
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbsrHookSynchFrame::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbsrHookSynchFrame
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbsrHookClearFeature::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbsrHookClearFeature
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbsrHookSetFeature::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbsrHookSetFeature
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbsrHookModifyGetStatus::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbsrHookModifyGetStatus
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbsrHookProcessEvent::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbsrHookProcessEvent
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbirqHookProcessEvents::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbirqHookProcessEvents
+    122          
+    123          /*
+    124          +------------------------------------------------------------------------------
+    125          |  Copyright 2004-2007 Texas Instruments Incorporated. All rights reserved.
+    126          |
+    127          |  IMPORTANT: Your use of this Software is limited to those specific rights
+    128          |  granted under the terms of a software license agreement between the user who
+    129          |  downloaded the software, his/her employer (which must be your employer) and
+    130          |  Texas Instruments Incorporated (the "License"). You may not use this Software
+    131          |  unless you agree to abide by the terms of the License. The License limits
+    132          |  your use, and you acknowledge, that the Software may not be modified, copied
+    133          |  or distributed unless embedded on a Texas Instruments microcontroller or used
+    134          |  solely and exclusively in conjunction with a Texas Instruments radio
+    135          |  frequency transceiver, which is integrated into your product. Other than for
+    136          |  the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+    137          |  works of, modify, distribute, perform, display or sell this Software and/or
+    138          |  its documentation for any purpose.
+    139          |
+    140          |  YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+    141          |  PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+    142          |  INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+    143          |  NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+    144          |  TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+    145          |  NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+    146          |  LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES INCLUDING
+    147          |  BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE OR
+    148          |  CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT OF
+    149          |  SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+    150          |  (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+    151          |
+    152          |  Should you have any questions regarding your right to use this Software,
+    153          |  contact Texas Instruments Incorporated at www.TI.com.
+    154          |
+    155          +------------------------------------------------------------------------------
+    156          */
+
+   Maximum stack usage in bytes:
+
+   ISTACK Function
+   ------ --------
+      2   usbcrHookProcessIn
+      2   usbcrHookProcessOut
+      0   usbirqHookProcessEvents
+      2   usbsrHookClearFeature
+      0   usbsrHookModifyGetStatus
+      0   usbsrHookProcessEvent
+      2   usbsrHookSetDescriptor
+      2   usbsrHookSetFeature
+      2   usbsrHookSynchFrame
+      2   usbvrHookProcessIn
+      2   usbvrHookProcessOut
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       7  ??Subroutine2_0
+      10  ?Subroutine0
+      14  ?Subroutine1
+       7  currentLineCoding
+      39  usbcrHookProcessIn
+       6  usbcrHookProcessIn::?relay
+      46  usbcrHookProcessOut
+       6  usbcrHookProcessOut::?relay
+       3  usbirqHookProcessEvents
+       6  usbirqHookProcessEvents::?relay
+       0  usbsrHookClearFeature
+       6  usbsrHookClearFeature::?relay
+       3  usbsrHookModifyGetStatus
+       6  usbsrHookModifyGetStatus::?relay
+       3  usbsrHookProcessEvent
+       6  usbsrHookProcessEvent::?relay
+       2  usbsrHookSetDescriptor
+       6  usbsrHookSetDescriptor::?relay
+       2  usbsrHookSetFeature
+       6  usbsrHookSetFeature::?relay
+       2  usbsrHookSynchFrame
+       6  usbsrHookSynchFrame::?relay
+       2  usbvrHookProcessIn
+       6  usbvrHookProcessIn::?relay
+       2  usbvrHookProcessOut
+       6  usbvrHookProcessOut::?relay
+
+ 
+ 135 bytes in segment BANKED_CODE
+  66 bytes in segment BANK_RELAYS
+   7 bytes in segment XDATA_Z
+ 
+  66 bytes of CODE     memory
+ 135 bytes of HUGECODE memory
+   7 bytes of XDATA    memory
+
+Errors: none
+Warnings: none

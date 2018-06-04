@@ -1,0 +1,5 @@
+00010
+The first byte of this file is a bit mask that forces the ZNP post processing
+to run popless for the corresponding build types.
+The bit mask is updated when the 'Cancel' button is pressed on a pop-up
+Simply delete this file to get all pop-ups back.

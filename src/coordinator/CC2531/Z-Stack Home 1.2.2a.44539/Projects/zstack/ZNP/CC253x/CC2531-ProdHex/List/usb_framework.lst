@@ -1,0 +1,1140 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               16/Feb/2018  22:13:13
+# Copyright 2004-2017 IAR Systems AB.
+# Evaluation license - IAR Embedded Workbench for 8051, Evaluation version 10.10
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Components\hal\target\CC2530USB\usb\library\usb_framework.c
+#    Command line       =  
+#        -f C:\Users\Oskar\AppData\Local\Temp\EW6D0E.tmp ("C:\Texas
+#        Instruments\Z-Stack Home
+#        1.2.2a.44539\Components\hal\target\CC2530USB\usb\library\usb_framework.c"
+#        -D FEATURE_SYSTEM_STATS -D CC2531ZNP -D POWER_SAVING -D ASSERT_RESET
+#        -D FAKE_CRC_SHDW -D xTC_LINKKEY_JOIN -lC "C:\Texas Instruments\Z-Stack
+#        Home 1.2.2a.44539\Projects\zstack\ZNP\CC253x\CC2531-ProdHex\List" -lA
+#        "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\CC2531-ProdHex\List"
+#        --diag_suppress Pe001,Pa010 -o "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\CC2531-ProdHex\Obj" -e --debug
+#        --core=plain --dptr=16,1 --data_model=large --code_model=banked
+#        --calling_convention=xdata_reentrant --place_constants=data_rom
+#        --nr_virtual_regs 16 -f "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\Source\znp.cfg"
+#        (-DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        "-DZSTACK_DEVICE_BUILD=(DEVICE_BUILD_COORDINATOR | DEVICE_BUILD_ROUTER
+#        | DEVICE_BUILD_ENDDEVICE)" -DNWK_AUTO_POLL -DZNP_RUN_WDOG=FALSE
+#        -DZNP_UART_BAUD=HAL_UART_BR_115200 -DZIGBEEPRO -DZIGBEE_FRAGMENTATION
+#        -DINTER_PAN -DOSAL_CLOCK -DOSAL_SAPI=FALSE -DSAPI_CB_FUNC=FALSE
+#        -DHOLD_AUTO_START -DNV_RESTORE -DNV_INIT -DNUM_DISC_ATTEMPTS=0
+#        -DTC_LINKKEY_JOIN -DMT_UTIL_FUNC -DMT_SYS_FUNC -DMT_AF_FUNC
+#        -DMT_SAPI_FUNC -DMT_SAPI_CB_FUNC -DMT_ZDO_CB_FUNC -DMT_ZDO_FUNC
+#        -DMT_ZDO_MGMT -DMT_ZDO_EXTENSIONS -DMT_APP_FUNC) -f "C:\Texas
+#        Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07,
+#        0x09, 0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C,
+#        0x0D}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000)
+#        -f "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\Tools\CC2530DB\f8wZCL.cfg"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\" -I "C:\Texas
+#        Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\Source\" -I "C:\Texas
+#        Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\Source\" -I "C:\Texas
+#        Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\SE\Source\" -I "C:\Texas
+#        Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\Utilities\BootLoad\Source\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\ZMain\TI2530ZNP\" -I
+#        "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530USB\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530USB\usb\library\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530USB\usb\library\cc2531\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530USB\usb\class_cdc\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\include\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\high_level\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\low_level\srf04\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mt\" -I
+#        "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\ecc\binary163\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\ecc\binary283\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\saddr\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\sdata\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\af\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\nwk\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sapi\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sec\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sys\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\zcl\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\zdo\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\zmac\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\zmac\f8w\"
+#        -Ohz --require_prototypes --no_code_motion)
+#    Locale             =  German_Germany.1252
+#    List file          =  
+#        C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\CC2531-ProdHex\List\usb_framework.lst
+#    Object file        =  
+#        C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\CC2531-ProdHex\Obj\usb_framework.r51
+#
+###############################################################################
+
+C:\Texas Instruments\Z-Stack Home 1.2.2a.44539\Components\hal\target\CC2530USB\usb\library\usb_framework.c
+      1          /***********************************************************************************
+      2          
+      3              Filename:     usb_framework.c
+      4          
+      5              Description:  USB library common functionality.
+      6          
+      7          ***********************************************************************************/
+      8          
+      9          /// \addtogroup module_usb_framework
+     10          /// @{
+     11          #define USBFRAMEWORK_C ///< Modifies the behavior of "EXTERN" in usb_framework.h
+     12          #include "usb_firmware_library_headers.h"
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \   USBFW_DATA usbfwData
+   \                     usbfwData:
+   \   000000                DS 20
+   \   000014                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \   USB_SETUP_DATA usbSetupData
+   \                     usbSetupData:
+   \   000000                DS 5
+   \   000005                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+   \   USB_SETUP_HEADER usbSetupHeader
+   \                     usbSetupHeader:
+   \   000000                DS 8
+   \   000008                REQUIRE __INIT_XDATA_Z
+     13          #include "usb_board_cfg.h"
+     14          
+     15          // Function pointer used by usbfwSetupHandler()
+
+   \                                 In  segment DATA_Z, align 1, keep-with-next
+     16          static VFPTR __data ProcessFunc;
+   \                     ProcessFunc:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_DATA_Z
+     17          
+     18          /** \brief Initializes the USB framework
+     19           *
+     20           * This function should be called when the microcontroller is ready to accept USB traffic. It enables the
+     21           * USB peripheral unit and enables the pull-up resistor on the D+ line. Endpoint status, current
+     22           * configuration value, etc. are initialized and evenetually re-initialized in the
+     23           * \ref usbfwResetHandler() function.
+     24           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     25          void usbfwInit(void)
+   \                     usbfwInit:
+     26          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+     27              // Set default values
+     28              usbfwData.selfPowered = (usbdpGetConfigurationDesc(1, 0)->bmAttributes & 0x40) ? TRUE : FALSE;
+   \   000005                ; Setup parameters for call to function usbdpGetConfigurationDesc
+   \   000005   7A00         MOV       R2,#0x0
+   \   000007   7901         MOV       R1,#0x1
+   \   000009   12....       LCALL     `??usbdpGetConfigurationDesc::?relay`; Banked call to: usbdpGetConfigurationDesc
+   \   00000C   8A82         MOV       DPL,R2
+   \   00000E   8B83         MOV       DPH,R3
+   \   000010   A3           INC       DPTR
+   \   000011   A3           INC       DPTR
+   \   000012   A3           INC       DPTR
+   \   000013   A3           INC       DPTR
+   \   000014   A3           INC       DPTR
+   \   000015   A3           INC       DPTR
+   \   000016   A3           INC       DPTR
+   \   000017   E4           CLR       A
+   \   000018   93           MOVC      A,@A+DPTR
+   \   000019   A2E6         MOV       C,0xE0 /* A   */.6
+   \   00001B   5004         JNC       ??usbfwInit_0
+   \   00001D   D2F0         SETB      B.0
+   \   00001F   8002         SJMP      ??usbfwInit_1
+   \                     ??usbfwInit_0:
+   \   000021   C2F0         CLR       B.0
+   \                     ??usbfwInit_1:
+   \   000023   A2F0         MOV       C,B.0
+   \   000025   E4           CLR       A
+   \   000026   33           RLC       A
+   \   000027   90....       MOV       DPTR,#usbfwData + 19
+   \   00002A   F0           MOVX      @DPTR,A
+     29              usbfwData.remoteWakeup = FALSE;
+   \   00002B   90....       MOV       DPTR,#usbfwData + 18
+   \   00002E   E4           CLR       A
+   \   00002F   F0           MOVX      @DPTR,A
+     30          
+     31              HAL_USB_ENABLE();
+   \   000030   90620F       MOV       DPTR,#0x620f
+   \   000033   7403         MOV       A,#0x3
+   \   000035   F0           MOVX      @DPTR,A
+   \                     ??usbfwInit_2:
+   \   000036   E0           MOVX      A,@DPTR
+   \   000037   A2E7         MOV       C,0xE0 /* A   */.7
+   \   000039   50FB         JNC       ??usbfwInit_2
+     32          
+     33              // Enable Resume Interrupt
+     34              HAL_USB_RESUME_INT_ENABLE();
+   \   00003B   90620B       MOV       DPTR,#0x620b
+   \   00003E   E0           MOVX      A,@DPTR
+   \   00003F   D2E1         SETB      0xE0 /* A   */.1
+   \   000041   F0           MOVX      @DPTR,A
+     35          
+     36          } // usbfwInit
+   \   000042   7F02         MOV       R7,#0x2
+   \   000044   02....       LJMP      ?BANKED_LEAVE_XDATA
+     37          
+     38          
+     39          
+     40          
+     41          /** \brief Handles USB reset signalling
+     42           *
+     43           * This function should be called, either from the USB interrupt or the main loop, when the \c USBCIF.RST
+     44           * flag has been set. Keep in mind that all bits in \c USBCIF register are cleared when the register is
+     45           * read. The function puts the device into the default state (not yet addressed), and puts all endpoints
+     46           * (except EP0) into the \ref EP_HALT state
+     47           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     48          void usbfwResetHandler(void)
+   \                     usbfwResetHandler:
+     49          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     50          
+     51             // Reset the USB state
+     52             usbfwData.usbState = DEV_DEFAULT;
+   \   000004   90....       MOV       DPTR,#usbfwData
+   \   000007   7402         MOV       A,#0x2
+   \   000009   F0           MOVX      @DPTR,A
+     53             usbfwData.configurationValue = 0;
+   \   00000A   A3           INC       DPTR
+   \   00000B   E4           CLR       A
+   \   00000C   F0           MOVX      @DPTR,A
+     54          
+     55             // Reset all endpoints
+     56             usbfwData.ep0Status = EP_IDLE;
+   \   00000D   90....       MOV       DPTR,#usbfwData + 7
+   \   000010   F0           MOVX      @DPTR,A
+     57             usbfwSetAllEpStatus(EP_HALT);
+   \   000011                ; Setup parameters for call to function usbfwSetAllEpStatus
+   \   000011   7903         MOV       R1,#0x3
+   \   000013   12....       LCALL     `??usbfwSetAllEpStatus::?relay`; Banked call to: usbfwSetAllEpStatus
+     58          
+     59             // Reset last function pointer
+     60             ProcessFunc = NULL;
+   \   000016   75..00       MOV       ProcessFunc+0x0,#0x0
+   \   000019   75..00       MOV       ProcessFunc+0x1,#0x0
+     61          
+     62          } // usbfwResetHandler
+   \   00001C                REQUIRE ?Subroutine0
+   \   00001C                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP       DPH
+   \   000002   D082         POP       DPL
+   \   000004   02....       LJMP      ?BRET
+     63          
+     64          
+     65          
+     66          
+     67          /** \brief USB Setup Handler
+     68           *
+     69           * This function should be called either from the USB interrupt or the main loop when the \c USBIIF.EP0IF
+     70           * flag has been set. Keep in mind that all bits in \c USBIIF register are cleared when the register is
+     71           * read. A detailed description of the framework is found in the \ref section_setup_handler_usage
+     72           * section.
+     73           *
+     74           * \note The USB header data is always little-endian, so if a big-endian compiler is used (such as Keil
+     75           * C51), the 16-bit values in the \ref usbSetupHeader must be flipped before they are used.
+     76           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     77          void usbfwSetupHandler(void)
+   \                     usbfwSetupHandler:
+     78          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V4
+   \   000000                REQUIRE ?V5
+   \   000000                REQUIRE ?V6
+   \   000000   74F1         MOV       A,#-0xf
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 15
+   \   000005                ; Auto size: 0
+     79             uint8 controlReg;
+     80             uint8 bytesNow;
+     81             uint8 oldEndpoint;
+     82          
+     83             // Save the old index setting, then select endpoint 0 and fetch the control register
+     84             oldEndpoint = USBFW_GET_SELECTED_ENDPOINT();
+   \   000005   90620E       MOV       DPTR,#0x620e
+   \   000008   E0           MOVX      A,@DPTR
+   \   000009   F5..         MOV       ?V0,A
+     85             USBFW_SELECT_ENDPOINT(0);
+   \   00000B   E4           CLR       A
+   \   00000C   F0           MOVX      @DPTR,A
+     86             controlReg = USBCS0;
+   \   00000D   906211       MOV       DPTR,#0x6211
+   \   000010   E0           MOVX      A,@DPTR
+   \   000011   FE           MOV       R6,A
+     87          
+     88             // The last transfer was ended prematurely by a new SETUP packet
+     89             if (controlReg & USBCS0_SETUP_END) {
+   \   000012   A2E4         MOV       C,0xE0 /* A   */.4
+   \   000014   501D         JNC       ??usbfwSetupHandler_0
+     90                USBCS0 = USBCS0_CLR_SETUP_END;
+   \   000016   7480         MOV       A,#-0x80
+   \   000018   F0           MOVX      @DPTR,A
+     91                usbfwData.ep0Status = EP_CANCEL;
+   \   000019   90....       MOV       DPTR,#usbfwData + 7
+   \   00001C   7407         MOV       A,#0x7
+   \   00001E   F0           MOVX      @DPTR,A
+     92                if (ProcessFunc) ProcessFunc();
+   \   00001F   E5..         MOV       A,ProcessFunc+0x0
+   \   000021   45..         ORL       A,ProcessFunc+0x1
+   \   000023   6009         JZ        ??usbfwSetupHandler_1
+   \   000025                ; Setup parameters for indirect call
+   \   000025   85..82       MOV       DPL,ProcessFunc+0x0
+   \   000028   85..83       MOV       DPH,ProcessFunc+0x1
+   \   00002B   12....       LCALL     ?CALL_IND
+     93                usbfwData.ep0Status = EP_IDLE;
+   \                     ??usbfwSetupHandler_1:
+   \   00002E   90....       MOV       DPTR,#usbfwData + 7
+   \   000031   E4           CLR       A
+   \   000032   F0           MOVX      @DPTR,A
+     94             }
+     95          
+     96             // A STALL handshake was transmitted to the PC
+     97             if (controlReg & USBCS0_SENT_STALL) {
+   \                     ??usbfwSetupHandler_0:
+   \   000033   EE           MOV       A,R6
+   \   000034   A2E2         MOV       C,0xE0 /* A   */.2
+   \   000036   500B         JNC       ??usbfwSetupHandler_2
+     98                USBCS0 = 0x00;
+   \   000038   906211       MOV       DPTR,#0x6211
+   \   00003B   E4           CLR       A
+   \   00003C   F0           MOVX      @DPTR,A
+     99                usbfwData.ep0Status = EP_IDLE;
+   \   00003D   90....       MOV       DPTR,#usbfwData + 7
+   \   000040   F0           MOVX      @DPTR,A
+   \   000041   8065         SJMP      ??usbfwSetupHandler_3
+    100             }
+    101          
+    102             // Receive OUT packets
+    103             if (usbfwData.ep0Status == EP_RX) {
+   \                     ??usbfwSetupHandler_2:
+   \   000043   90....       MOV       DPTR,#usbfwData + 7
+   \   000046   E0           MOVX      A,@DPTR
+   \   000047   6402         XRL       A,#0x2
+   \   000049   7046         JNZ       ??usbfwSetupHandler_4
+    104          
+    105                // Read FIFO
+    106                bytesNow = USBCNT0;
+   \   00004B   906216       MOV       DPTR,#0x6216
+   \   00004E   E0           MOVX      A,@DPTR
+   \   00004F   FE           MOV       R6,A
+    107                usbfwReadFifo(&USBF0, bytesNow, usbSetupData.pBuffer);
+   \   000050                ; Setup parameters for call to function usbfwReadFifo
+   \   000050   90....       MOV       DPTR,#usbSetupData
+   \   000053   12....       LCALL     ?PUSH_XSTACK8_X_THREE
+   \   000056   EE           MOV       A,R6
+   \   000057   F9           MOV       R1,A
+   \   000058   7A20         MOV       R2,#0x20
+   \   00005A   7B62         MOV       R3,#0x62
+   \   00005C   12....       LCALL     `??usbfwReadFifo::?relay`; Banked call to: usbfwReadFifo
+   \   00005F   7403         MOV       A,#0x3
+   \   000061   12....       LCALL     ?DEALLOC_XSTACK8
+    108                usbSetupData.bytesLeft -= bytesNow;
+   \   000064   EE           MOV       A,R6
+   \   000065   F8           MOV       R0,A
+   \   000066   90....       MOV       DPTR,#usbSetupData + 3
+   \   000069   12....       LCALL     ?Subroutine5 & 0xFFFF
+    109                usbSetupData.pBuffer += bytesNow;
+   \                     ??CrossCallReturnLabel_6:
+   \   00006C   12....       LCALL     ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_2:
+   \   00006F   2E           ADD       A,R6
+   \   000070   12....       LCALL     ?Subroutine2 & 0xFFFF
+    110          
+    111                // Arm the endpoint
+    112                USBCS0 = usbSetupData.bytesLeft ? USBCS0_CLR_OUTPKT_RDY : (USBCS0_CLR_OUTPKT_RDY | USBCS0_DATA_END);
+   \                     ??CrossCallReturnLabel_0:
+   \   000073   A3           INC       DPTR
+   \   000074   E0           MOVX      A,@DPTR
+   \   000075   F8           MOV       R0,A
+   \   000076   A3           INC       DPTR
+   \   000077   E0           MOVX      A,@DPTR
+   \   000078   F9           MOV       R1,A
+   \   000079   E8           MOV       A,R0
+   \   00007A   49           ORL       A,R1
+   \   00007B   6004         JZ        ??usbfwSetupHandler_5
+   \   00007D   7440         MOV       A,#0x40
+   \   00007F   8002         SJMP      ??usbfwSetupHandler_6
+   \                     ??usbfwSetupHandler_5:
+   \   000081   7448         MOV       A,#0x48
+   \                     ??usbfwSetupHandler_6:
+   \   000083   906211       MOV       DPTR,#0x6211
+   \   000086   F0           MOVX      @DPTR,A
+    113          
+    114                // Make a call to the appropriate request handler when done
+    115                if (usbSetupData.bytesLeft == 0) {
+   \   000087   E8           MOV       A,R0
+   \   000088   49           ORL       A,R1
+   \   000089   6003         JZ        $+5
+   \   00008B   02....       LJMP      ??usbfwSetupHandler_7 & 0xFFFF
+   \   00008E   02....       LJMP      ??usbfwSetupHandler_8 & 0xFFFF
+    116                   if (ProcessFunc) ProcessFunc();
+    117                   usbfwData.ep0Status = EP_IDLE;
+    118                }
+    119          
+    120                // Return here since nothing more will happen until the next interrupt
+    121                USBFW_SELECT_ENDPOINT(oldEndpoint);
+    122                return;
+    123          
+    124             // Let the application handle the reception
+    125             } else if (usbfwData.ep0Status == EP_MANUAL_RX) {
+   \                     ??usbfwSetupHandler_4:
+   \   000091   E0           MOVX      A,@DPTR
+   \   000092   6406         XRL       A,#0x6
+   \   000094   7009         JNZ       ??usbfwSetupHandler_9
+    126                ProcessFunc();
+   \   000096                ; Setup parameters for indirect call
+   \   000096   85..82       MOV       DPL,ProcessFunc+0x0
+   \   000099   85..83       MOV       DPH,ProcessFunc+0x1
+   \   00009C   12....       LCALL     ?CALL_IND
+    127             }
+    128          
+    129             // Receive SETUP header
+    130             if (usbfwData.ep0Status == EP_IDLE) {
+   \                     ??usbfwSetupHandler_9:
+   \   00009F   90....       MOV       DPTR,#usbfwData + 7
+   \   0000A2   E0           MOVX      A,@DPTR
+   \   0000A3   6003         JZ        $+5
+   \   0000A5   02....       LJMP      ??usbfwSetupHandler_10 & 0xFFFF
+    131                if (controlReg & USBCS0_OUTPKT_RDY) {
+   \                     ??usbfwSetupHandler_3:
+   \   0000A8   EE           MOV       A,R6
+   \   0000A9   A2E0         MOV       C,0xE0 /* A   */.0
+   \   0000AB   4003         JC        $+5
+   \   0000AD   02....       LJMP      ??usbfwSetupHandler_7 & 0xFFFF
+    132                   usbfwReadFifo(&USBF0, 8, (uint8 __xdata *) &usbSetupHeader);
+   \   0000B0                ; Setup parameters for call to function usbfwReadFifo
+   \   0000B0   75....       MOV       ?V4,#usbSetupHeader & 0xff
+   \   0000B3   75....       MOV       ?V5,#(usbSetupHeader >> 8) & 0xff
+   \   0000B6   75..00       MOV       ?V6,#0x0
+   \   0000B9   78..         MOV       R0,#?V4
+   \   0000BB   12....       LCALL     ?PUSH_XSTACK_I_THREE
+   \   0000BE   7908         MOV       R1,#0x8
+   \   0000C0   7A20         MOV       R2,#0x20
+   \   0000C2   7B62         MOV       R3,#0x62
+   \   0000C4   12....       LCALL     `??usbfwReadFifo::?relay`; Banked call to: usbfwReadFifo
+   \   0000C7   7403         MOV       A,#0x3
+   \   0000C9   12....       LCALL     ?DEALLOC_XSTACK8
+    133          
+    134                   // Handle control transfers individually
+    135                   ProcessFunc = NULL;
+   \   0000CC   75..00       MOV       ProcessFunc+0x0,#0x0
+   \   0000CF   75..00       MOV       ProcessFunc+0x1,#0x0
+    136                   switch (usbSetupHeader.requestType & (RT_MASK_TYPE | RT_MASK_DIR)) {
+   \   0000D2   90....       MOV       DPTR,#usbSetupHeader
+   \   0000D5   E0           MOVX      A,@DPTR
+   \   0000D6   54E0         ANL       A,#0xe0
+   \   0000D8   601D         JZ        ??usbfwSetupHandler_11
+   \   0000DA   24E0         ADD       A,#-0x20
+   \   0000DC   7003         JNZ       $+5
+   \   0000DE   02....       LJMP      ??usbfwSetupHandler_12 & 0xFFFF
+   \   0000E1   24E0         ADD       A,#-0x20
+   \   0000E3   6072         JZ        ??usbfwSetupHandler_13
+   \   0000E5   24C0         ADD       A,#-0x40
+   \   0000E7   6048         JZ        ??usbfwSetupHandler_14
+   \   0000E9   24E0         ADD       A,#-0x20
+   \   0000EB   7003         JNZ       $+5
+   \   0000ED   02....       LJMP      ??usbfwSetupHandler_15 & 0xFFFF
+   \   0000F0   24E0         ADD       A,#-0x20
+   \   0000F2   606E         JZ        ??usbfwSetupHandler_16
+   \   0000F4   02....       LJMP      ??usbfwSetupHandler_17 & 0xFFFF
+    137          
+    138                      // Standard requests with data from the host (OUT)
+    139                   case RT_STD_OUT:
+    140                      switch (usbSetupHeader.request) {
+   \                     ??usbfwSetupHandler_11:
+   \   0000F7   A3           INC       DPTR
+   \   0000F8   E0           MOVX      A,@DPTR
+   \   0000F9   14           DEC       A
+   \   0000FA   6026         JZ        ??usbfwSetupHandler_18
+   \   0000FC   24FE         ADD       A,#-0x2
+   \   0000FE   601D         JZ        ??usbfwSetupHandler_19
+   \   000100   24FE         ADD       A,#-0x2
+   \   000102   600A         JZ        ??usbfwSetupHandler_20
+   \   000104   24FC         ADD       A,#-0x4
+   \   000106   601F         JZ        ??usbfwSetupHandler_21
+   \   000108   24FE         ADD       A,#-0x2
+   \   00010A   6020         JZ        ??usbfwSetupHandler_22
+   \   00010C   8075         SJMP      ??usbfwSetupHandler_17
+    141                      case SET_ADDRESS:       usbsrSetAddress(); break;
+   \                     ??usbfwSetupHandler_20:
+   \   00010E                ; Setup parameters for call to function usbsrSetAddress
+   \   00010E   12....       LCALL     `??usbsrSetAddress::?relay`; Banked call to: usbsrSetAddress
+    142                      case SET_FEATURE:       usbsrSetFeature(); break;
+    143                      case CLEAR_FEATURE:     usbsrClearFeature(); break;
+    144                      case SET_CONFIGURATION: usbsrSetConfiguration(); break;
+    145                      case SET_INTERFACE:     usbsrSetInterface(); break;
+    146                      case SET_DESCRIPTOR:    /*usbsrHookSetDescriptor(); break; - unsupported */
+    147                      default:                usbfwData.ep0Status = EP_STALL; break;
+    148                      }
+    149                      break;
+    150          
+    151                      // Standard requests with data to the host (IN)
+    152                   case RT_STD_IN:
+    153                      switch (usbSetupHeader.request) {
+    154                      case GET_STATUS:        usbsrGetStatus(); break;
+    155                      case GET_DESCRIPTOR:    usbsrGetDescriptor(); break;
+    156                      case GET_CONFIGURATION: usbsrGetConfiguration(); break;
+    157                      case GET_INTERFACE:     usbsrGetInterface(); break;
+    158                      case SYNCH_FRAME:       /*usbsrHookSynchFrame(); break; - unsupported */
+    159                      default:                usbfwData.ep0Status = EP_STALL; break;
+    160                      }
+    161                      break;
+    162          
+    163                      // Vendor requests
+    164                   case RT_VEND_OUT:
+    165                      ProcessFunc = usbvrHookProcessOut; usbvrHookProcessOut();
+    166                      break;
+    167                   case RT_VEND_IN:
+    168                      ProcessFunc = usbvrHookProcessIn; usbvrHookProcessIn();
+    169                      break;
+    170          
+    171                      // Class requests
+    172                   case RT_CLASS_OUT:
+    173                      ProcessFunc = usbcrHookProcessOut; usbcrHookProcessOut();
+    174                      break;
+    175                   case RT_CLASS_IN:
+    176                      ProcessFunc = usbcrHookProcessIn; usbcrHookProcessIn();
+    177                      break;
+    178          
+    179                      // Unrecognized request: Stall the endpoint
+    180                   default:
+    181                      usbfwData.ep0Status = EP_STALL;
+    182                      break;
+    183                   }
+    184          
+    185                   // Arm/stall the endpoint
+    186                   USBCS0 = (usbfwData.ep0Status == EP_STALL) ? (USBCS0_CLR_OUTPKT_RDY | USBCS0_SEND_STALL) : USBCS0_CLR_OUTPKT_RDY;
+   \                     ??usbfwSetupHandler_23:
+   \   000111   90....       MOV       DPTR,#usbfwData + 7
+   \   000114   E0           MOVX      A,@DPTR
+   \   000115   6404         XRL       A,#0x4
+   \   000117   7072         JNZ       ??usbfwSetupHandler_24
+   \                     ??usbfwSetupHandler_25:
+   \   000119   7860         MOV       R0,#0x60
+   \   00011B   8070         SJMP      ??usbfwSetupHandler_26
+   \                     ??usbfwSetupHandler_19:
+   \   00011D                ; Setup parameters for call to function usbsrSetFeature
+   \   00011D   12....       LCALL     `??usbsrSetFeature::?relay`; Banked call to: usbsrSetFeature
+   \   000120   80EF         SJMP      ??usbfwSetupHandler_23
+   \                     ??usbfwSetupHandler_18:
+   \   000122                ; Setup parameters for call to function usbsrClearFeature
+   \   000122   12....       LCALL     `??usbsrClearFeature::?relay`; Banked call to: usbsrClearFeature
+   \   000125   80EA         SJMP      ??usbfwSetupHandler_23
+   \                     ??usbfwSetupHandler_21:
+   \   000127                ; Setup parameters for call to function usbsrSetConfiguration
+   \   000127   12....       LCALL     `??usbsrSetConfiguration::?relay`; Banked call to: usbsrSetConfiguration
+   \   00012A   80E5         SJMP      ??usbfwSetupHandler_23
+   \                     ??usbfwSetupHandler_22:
+   \   00012C                ; Setup parameters for call to function usbsrSetInterface
+   \   00012C   12....       LCALL     `??usbsrSetInterface::?relay`; Banked call to: usbsrSetInterface
+   \   00012F   80E0         SJMP      ??usbfwSetupHandler_23
+   \                     ??usbfwSetupHandler_14:
+   \   000131   A3           INC       DPTR
+   \   000132   E0           MOVX      A,@DPTR
+   \   000133   600E         JZ        ??usbfwSetupHandler_27
+   \   000135   24FA         ADD       A,#-0x6
+   \   000137   600F         JZ        ??usbfwSetupHandler_28
+   \   000139   24FE         ADD       A,#-0x2
+   \   00013B   6010         JZ        ??usbfwSetupHandler_29
+   \   00013D   24FE         ADD       A,#-0x2
+   \   00013F   6011         JZ        ??usbfwSetupHandler_30
+   \   000141   8040         SJMP      ??usbfwSetupHandler_17
+   \                     ??usbfwSetupHandler_27:
+   \   000143                ; Setup parameters for call to function usbsrGetStatus
+   \   000143   12....       LCALL     `??usbsrGetStatus::?relay`; Banked call to: usbsrGetStatus
+   \   000146   80C9         SJMP      ??usbfwSetupHandler_23
+   \                     ??usbfwSetupHandler_28:
+   \   000148                ; Setup parameters for call to function usbsrGetDescriptor
+   \   000148   12....       LCALL     `??usbsrGetDescriptor::?relay`; Banked call to: usbsrGetDescriptor
+   \   00014B   80C4         SJMP      ??usbfwSetupHandler_23
+   \                     ??usbfwSetupHandler_29:
+   \   00014D                ; Setup parameters for call to function usbsrGetConfiguration
+   \   00014D   12....       LCALL     `??usbsrGetConfiguration::?relay`; Banked call to: usbsrGetConfiguration
+   \   000150   80BF         SJMP      ??usbfwSetupHandler_23
+   \                     ??usbfwSetupHandler_30:
+   \   000152                ; Setup parameters for call to function usbsrGetInterface
+   \   000152   12....       LCALL     `??usbsrGetInterface::?relay`; Banked call to: usbsrGetInterface
+   \   000155   80BA         SJMP      ??usbfwSetupHandler_23
+   \                     ??usbfwSetupHandler_13:
+   \   000157   75....       MOV       ProcessFunc+0x0,#`??usbvrHookProcessOut::?relay` & 0xff
+   \   00015A   75....       MOV       ProcessFunc+0x1,#(`??usbvrHookProcessOut::?relay` >> 8) & 0xff
+   \   00015D                ; Setup parameters for call to function usbvrHookProcessOut
+   \   00015D   12....       LCALL     `??usbvrHookProcessOut::?relay`; Banked call to: usbvrHookProcessOut
+   \   000160   80AF         SJMP      ??usbfwSetupHandler_23
+   \                     ??usbfwSetupHandler_16:
+   \   000162   75....       MOV       ProcessFunc+0x0,#`??usbvrHookProcessIn::?relay` & 0xff
+   \   000165   75....       MOV       ProcessFunc+0x1,#(`??usbvrHookProcessIn::?relay` >> 8) & 0xff
+   \   000168                ; Setup parameters for call to function usbvrHookProcessIn
+   \   000168   12....       LCALL     `??usbvrHookProcessIn::?relay`; Banked call to: usbvrHookProcessIn
+   \   00016B   80A4         SJMP      ??usbfwSetupHandler_23
+   \                     ??usbfwSetupHandler_12:
+   \   00016D   75....       MOV       ProcessFunc+0x0,#`??usbcrHookProcessOut::?relay` & 0xff
+   \   000170   75....       MOV       ProcessFunc+0x1,#(`??usbcrHookProcessOut::?relay` >> 8) & 0xff
+   \   000173                ; Setup parameters for call to function usbcrHookProcessOut
+   \   000173   12....       LCALL     `??usbcrHookProcessOut::?relay`; Banked call to: usbcrHookProcessOut
+   \   000176   8099         SJMP      ??usbfwSetupHandler_23
+   \                     ??usbfwSetupHandler_15:
+   \   000178   75....       MOV       ProcessFunc+0x0,#`??usbcrHookProcessIn::?relay` & 0xff
+   \   00017B   75....       MOV       ProcessFunc+0x1,#(`??usbcrHookProcessIn::?relay` >> 8) & 0xff
+   \   00017E                ; Setup parameters for call to function usbcrHookProcessIn
+   \   00017E   12....       LCALL     `??usbcrHookProcessIn::?relay`; Banked call to: usbcrHookProcessIn
+   \   000181   808E         SJMP      ??usbfwSetupHandler_23
+   \                     ??usbfwSetupHandler_17:
+   \   000183   90....       MOV       DPTR,#usbfwData + 7
+   \   000186   7404         MOV       A,#0x4
+   \   000188   F0           MOVX      @DPTR,A
+   \   000189   808E         SJMP      ??usbfwSetupHandler_25
+    187                }
+    188             }
+   \                     ??usbfwSetupHandler_24:
+   \   00018B   7840         MOV       R0,#0x40
+   \                     ??usbfwSetupHandler_26:
+   \   00018D   E8           MOV       A,R0
+   \   00018E   906211       MOV       DPTR,#0x6211
+   \   000191   F0           MOVX      @DPTR,A
+    189          
+    190             // Transmit IN packets
+    191             if (usbfwData.ep0Status == EP_TX) {
+   \                     ??usbfwSetupHandler_10:
+   \   000192   90....       MOV       DPTR,#usbfwData + 7
+   \   000195   E0           MOVX      A,@DPTR
+   \   000196   6401         XRL       A,#0x1
+   \   000198   705E         JNZ       ??usbfwSetupHandler_31
+    192                controlReg = USBCS0_INPKT_RDY;
+   \   00019A   7F02         MOV       R7,#0x2
+    193          
+    194                // The last frame should contain 0 to (EP0_PACKET_SIZE - 1) bytes
+    195                if (usbSetupData.bytesLeft < EP0_PACKET_SIZE) {
+   \   00019C   90....       MOV       DPTR,#usbSetupData + 3
+   \   00019F   C3           CLR       C
+   \   0001A0   E0           MOVX      A,@DPTR
+   \   0001A1   9420         SUBB      A,#0x20
+   \   0001A3   A3           INC       DPTR
+   \   0001A4   E0           MOVX      A,@DPTR
+   \   0001A5   9400         SUBB      A,#0x0
+   \   0001A7   5009         JNC       ??usbfwSetupHandler_32
+    196                   bytesNow = usbSetupData.bytesLeft;
+   \   0001A9   90....       MOV       DPTR,#usbSetupData + 3
+   \   0001AC   E0           MOVX      A,@DPTR
+   \   0001AD   FE           MOV       R6,A
+    197                   controlReg |= USBCS0_DATA_END;
+   \   0001AE   7F0A         MOV       R7,#0xa
+   \   0001B0   8002         SJMP      ??usbfwSetupHandler_33
+    198          
+    199                   // All other packets should have the maximum length
+    200                } else {
+    201                   bytesNow = EP0_PACKET_SIZE;
+   \                     ??usbfwSetupHandler_32:
+   \   0001B2   7E20         MOV       R6,#0x20
+    202                }
+    203          
+    204                // Load the FIFO and move the pointer
+    205                usbfwWriteFifo(&USBF0, bytesNow, usbSetupData.pBuffer);
+   \                     ??usbfwSetupHandler_33:
+   \   0001B4                ; Setup parameters for call to function usbfwWriteFifo
+   \   0001B4   90....       MOV       DPTR,#usbSetupData
+   \   0001B7   12....       LCALL     ?PUSH_XSTACK8_X_THREE
+   \   0001BA   EE           MOV       A,R6
+   \   0001BB   F9           MOV       R1,A
+   \   0001BC   7A20         MOV       R2,#0x20
+   \   0001BE   7B62         MOV       R3,#0x62
+   \   0001C0   12....       LCALL     `??usbfwWriteFifo::?relay`; Banked call to: usbfwWriteFifo
+   \   0001C3   7403         MOV       A,#0x3
+   \   0001C5   12....       LCALL     ?DEALLOC_XSTACK8
+    206                usbSetupData.pBuffer += bytesNow;
+   \   0001C8   EE           MOV       A,R6
+   \   0001C9   FC           MOV       R4,A
+   \   0001CA   12....       LCALL     ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   0001CD   2C           ADD       A,R4
+   \   0001CE   12....       LCALL     ?Subroutine2 & 0xFFFF
+    207                usbSetupData.bytesLeft -= bytesNow;
+   \                     ??CrossCallReturnLabel_1:
+   \   0001D1   EE           MOV       A,R6
+   \   0001D2   F8           MOV       R0,A
+   \   0001D3   A3           INC       DPTR
+   \   0001D4   12....       LCALL     ?Subroutine5 & 0xFFFF
+    208          
+    209                // Arm the FIFO (even for a zero-length packet)
+    210                USBCS0 = controlReg;
+   \                     ??CrossCallReturnLabel_7:
+   \   0001D7   EF           MOV       A,R7
+   \   0001D8   906211       MOV       DPTR,#0x6211
+   \   0001DB   F0           MOVX      @DPTR,A
+    211          
+    212                // Make a call to the appropriate request handler when done
+    213                if (bytesNow < EP0_PACKET_SIZE) {
+   \   0001DC   EE           MOV       A,R6
+   \   0001DD   C3           CLR       C
+   \   0001DE   9420         SUBB      A,#0x20
+   \   0001E0   5024         JNC       ??usbfwSetupHandler_7
+    214                   if (ProcessFunc) ProcessFunc();
+   \                     ??usbfwSetupHandler_8:
+   \   0001E2   E5..         MOV       A,ProcessFunc+0x0
+   \   0001E4   45..         ORL       A,ProcessFunc+0x1
+   \   0001E6   6009         JZ        ??usbfwSetupHandler_34
+   \   0001E8                ; Setup parameters for indirect call
+   \   0001E8   85..82       MOV       DPL,ProcessFunc+0x0
+   \   0001EB   85..83       MOV       DPH,ProcessFunc+0x1
+   \   0001EE   12....       LCALL     ?CALL_IND
+    215                   usbfwData.ep0Status = EP_IDLE;
+   \                     ??usbfwSetupHandler_34:
+   \   0001F1   90....       MOV       DPTR,#usbfwData + 7
+   \   0001F4   E4           CLR       A
+   \   0001F5   F0           MOVX      @DPTR,A
+   \   0001F6   800E         SJMP      ??usbfwSetupHandler_7
+    216                }
+    217          
+    218             // Let the application handle the transmission
+    219             } else if (usbfwData.ep0Status == EP_MANUAL_TX) {
+   \                     ??usbfwSetupHandler_31:
+   \   0001F8   E0           MOVX      A,@DPTR
+   \   0001F9   6405         XRL       A,#0x5
+   \   0001FB   7009         JNZ       ??usbfwSetupHandler_7
+    220                ProcessFunc();
+   \   0001FD                ; Setup parameters for indirect call
+   \   0001FD   85..82       MOV       DPL,ProcessFunc+0x0
+   \   000200   85..83       MOV       DPH,ProcessFunc+0x1
+   \   000203   12....       LCALL     ?CALL_IND
+    221             }
+    222          
+    223             // Restore the old index setting
+    224             USBFW_SELECT_ENDPOINT(oldEndpoint);
+   \                     ??usbfwSetupHandler_7:
+   \   000206   E5..         MOV       A,?V0
+   \   000208   90620E       MOV       DPTR,#0x620e
+   \   00020B   F0           MOVX      @DPTR,A
+    225          
+    226          } // usbfwSetupHandler
+   \   00020C   7F07         MOV       R7,#0x7
+   \   00020E   02....       LJMP      ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   C3           CLR       C
+   \   000001   E0           MOVX      A,@DPTR
+   \   000002   98           SUBB      A,R0
+   \   000003   F0           MOVX      @DPTR,A
+   \   000004   A3           INC       DPTR
+   \   000005   E0           MOVX      A,@DPTR
+   \   000006   9400         SUBB      A,#0x0
+   \   000008   F0           MOVX      @DPTR,A
+   \   000009   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   90....       MOV       DPTR,#usbSetupData
+   \   000003   12....       LCALL     ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_8:
+   \   000006   E9           MOV       A,R1
+   \   000007   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   F9           MOV       R1,A
+   \   000001   E4           CLR       A
+   \   000002   3A           ADDC      A,R2
+   \   000003   FA           MOV       R2,A
+   \   000004   90....       MOV       DPTR,#usbSetupData
+   \   000007   E9           MOV       A,R1
+   \   000008   F0           MOVX      @DPTR,A
+   \   000009   A3           INC       DPTR
+   \   00000A   EA           MOV       A,R2
+   \   00000B   F0           MOVX      @DPTR,A
+   \   00000C   A3           INC       DPTR
+   \   00000D   EB           MOV       A,R3
+   \   00000E   F0           MOVX      @DPTR,A
+   \   00000F   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   E0           MOVX      A,@DPTR
+   \   000001   F9           MOV       R1,A
+   \   000002   A3           INC       DPTR
+   \   000003   E0           MOVX      A,@DPTR
+   \   000004   FA           MOV       R2,A
+   \   000005   A3           INC       DPTR
+   \   000006   E0           MOVX      A,@DPTR
+   \   000007   FB           MOV       R3,A
+   \   000008   22           RET
+    227          
+    228          
+    229          
+    230          
+    231          /** \brief Changes the state of endpoint 1-5 IN/OUT
+    232           *
+    233           * This is an internal function used by the library.
+    234           *
+    235           * \param[in]       status
+    236           *     The new status for each endpoint
+    237           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    238          void usbfwSetAllEpStatus(EP_STATUS status)
+   \                     usbfwSetAllEpStatus:
+    239          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    240             uint8 n;
+    241             for (n = 0; n < sizeof(usbfwData.pEpInStatus); n++)
+    242                 usbfwData.pEpInStatus[n] = status;
+   \   000004   E9           MOV       A,R1
+   \   000005   90....       MOV       DPTR,#usbfwData + 8
+   \   000008   7805         MOV       R0,#0x5
+   \                     ??usbfwSetAllEpStatus_0:
+   \   00000A   F0           MOVX      @DPTR,A
+   \   00000B   A3           INC       DPTR
+   \   00000C   D8FC         DJNZ      R0,??usbfwSetAllEpStatus_0
+    243             for (n = 0; n < sizeof(usbfwData.pEpOutStatus); n++)
+    244                 usbfwData.pEpOutStatus[n] = status;
+   \   00000E   90....       MOV       DPTR,#usbfwData + 13
+   \   000011   7805         MOV       R0,#0x5
+   \                     ??usbfwSetAllEpStatus_1:
+   \   000013   F0           MOVX      @DPTR,A
+   \   000014   A3           INC       DPTR
+   \   000015   D8FC         DJNZ      R0,??usbfwSetAllEpStatus_1
+    245          } // usbfwSetAllEpStatus
+   \   000017   02....       LJMP      ?Subroutine0 & 0xFFFF
+    246          
+    247          
+    248          
+    249          
+    250          /** \brief Reads from the selected OUT endpoint FIFO, without using DMA
+    251           *
+    252           * The FIFO must be re-armed after reading it empty (using the \ref USBFW_ARM_OUT_ENDPOINT() macro). This
+    253           * is not necessary when flushing the FIFO.
+    254           *
+    255           * \param[in]       *pFifo
+    256           *     Pointer to the FIFO (\c &USBFx)
+    257           * \param[in]       count
+    258           *     The number of bytes to read
+    259           * \param[in]       *pData
+    260           *     A pointer to the storage location for the read data (in any memory space)
+    261           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    262          void usbfwReadFifo(uint8 volatile __xdata *pFifo, uint8 count, void __generic *pData)
+   \                     usbfwReadFifo:
+    263          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV       A,R2
+   \   000006   FC           MOV       R4,A
+   \   000007   EB           MOV       A,R3
+   \   000008   FD           MOV       R5,A
+   \   000009   E9           MOV       A,R1
+   \   00000A   F8           MOV       R0,A
+    264             uint8 __generic *pTemp = pData;
+   \   00000B   7409         MOV       A,#0x9
+   \   00000D   12....       LCALL     ?XSTACK_DISP0_8
+   \   000010   12....       LCALL     ?Subroutine4 & 0xFFFF
+    265             if (count) {
+   \                     ??CrossCallReturnLabel_4:
+   \   000013   6011         JZ        ??usbfwReadFifo_0
+    266                do {
+    267                   *(pTemp++) = *pFifo;
+   \                     ??usbfwReadFifo_1:
+   \   000015   8C82         MOV       DPL,R4
+   \   000017   8D83         MOV       DPH,R5
+   \   000019   E0           MOVX      A,@DPTR
+   \   00001A   12....       LCALL     ?C_GPTR_STORE
+   \   00001D   E9           MOV       A,R1
+   \   00001E   2401         ADD       A,#0x1
+   \   000020   09           INC       R1
+   \   000021   E4           CLR       A
+   \   000022   3A           ADDC      A,R2
+   \   000023   FA           MOV       R2,A
+    268                } while (--count);
+   \   000024   D8EF         DJNZ      R0,??usbfwReadFifo_1
+    269             }
+    270          } // usbfwReadFifo
+   \                     ??usbfwReadFifo_0:
+   \   000026                REQUIRE ?Subroutine1
+   \   000026                ; // Fall through to label ?Subroutine1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   7F01         MOV       R7,#0x1
+   \   000002   02....       LJMP      ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   12....       LCALL     ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_9:
+   \   000003   E8           MOV       A,R0
+   \   000004   22           RET
+    271          
+    272          
+    273          
+    274          
+    275          /** \brief Writes to the selected IN endpoint FIFO, without using DMA
+    276           *
+    277           * Note that the FIFO must be armed in order to be transmitted (using the \ref USBFW_ARM_IN_ENDPOINT()
+    278           * macro).
+    279           *
+    280           * \param[in]       *pFifo
+    281           *     Pointer to the FIFO (\c &USBFx)
+    282           * \param[in]       count
+    283           *     The number of bytes to write
+    284           * \param[in]       *pData
+    285           *     A pointer to the data to be written (from any memory space)
+    286           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    287          void usbfwWriteFifo(uint8 volatile __xdata *pFifo, uint8 count, void __generic *pData)
+   \                     usbfwWriteFifo:
+    288          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV       A,R2
+   \   000006   FC           MOV       R4,A
+   \   000007   EB           MOV       A,R3
+   \   000008   FD           MOV       R5,A
+   \   000009   E9           MOV       A,R1
+   \   00000A   F8           MOV       R0,A
+    289             uint8 __generic *pTemp = pData;
+   \   00000B   7409         MOV       A,#0x9
+   \   00000D   12....       LCALL     ?XSTACK_DISP0_8
+   \   000010   12....       LCALL     ?Subroutine4 & 0xFFFF
+    290             if (count) {
+   \                     ??CrossCallReturnLabel_5:
+   \   000013   6011         JZ        ??usbfwWriteFifo_0
+    291                do {
+    292                   *pFifo = *(pTemp++);
+   \                     ??usbfwWriteFifo_1:
+   \   000015   12....       LCALL     ?C_GPTR_LOAD
+   \   000018   8C82         MOV       DPL,R4
+   \   00001A   8D83         MOV       DPH,R5
+   \   00001C   F0           MOVX      @DPTR,A
+   \   00001D   E9           MOV       A,R1
+   \   00001E   2401         ADD       A,#0x1
+   \   000020   09           INC       R1
+   \   000021   E4           CLR       A
+   \   000022   3A           ADDC      A,R2
+   \   000023   FA           MOV       R2,A
+    293                } while (--count);
+   \   000024   D8EF         DJNZ      R0,??usbfwWriteFifo_1
+    294             }
+    295          } // usbfwWriteFifo
+   \                     ??usbfwWriteFifo_0:
+   \   000026   80..         SJMP      ?Subroutine1
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbfwInit::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbfwInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbfwResetHandler::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbfwResetHandler
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbfwSetupHandler::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbfwSetupHandler
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbfwSetAllEpStatus::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbfwSetAllEpStatus
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbfwReadFifo::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbfwReadFifo
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbfwWriteFifo::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbfwWriteFifo
+    296          
+    297          
+    298          /// @}
+    299          /*
+    300          +------------------------------------------------------------------------------
+    301          |  Copyright 2004-2007 Texas Instruments Incorporated. All rights reserved.
+    302          |
+    303          |  IMPORTANT: Your use of this Software is limited to those specific rights
+    304          |  granted under the terms of a software license agreement between the user who
+    305          |  downloaded the software, his/her employer (which must be your employer) and
+    306          |  Texas Instruments Incorporated (the "License"). You may not use this Software
+    307          |  unless you agree to abide by the terms of the License. The License limits
+    308          |  your use, and you acknowledge, that the Software may not be modified, copied
+    309          |  or distributed unless embedded on a Texas Instruments microcontroller or used
+    310          |  solely and exclusively in conjunction with a Texas Instruments radio
+    311          |  frequency transceiver, which is integrated into your product. Other than for
+    312          |  the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+    313          |  works of, modify, distribute, perform, display or sell this Software and/or
+    314          |  its documentation for any purpose.
+    315          |
+    316          |  YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+    317          |  PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+    318          |  INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+    319          |  NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+    320          |  TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+    321          |  NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+    322          |  LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES INCLUDING
+    323          |  BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE OR
+    324          |  CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT OF
+    325          |  SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+    326          |  (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+    327          |
+    328          |  Should you have any questions regarding your right to use this Software,
+    329          |  contact Texas Instruments Incorporated at www.TI.com.
+    330          |
+    331          +------------------------------------------------------------------------------
+    332          */
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      0     10   usbfwInit
+        0     10   -> usbdpGetConfigurationDesc
+      1     27   usbfwReadFifo
+      2      0   usbfwResetHandler
+        2      0   -> usbfwSetAllEpStatus
+      2      0   usbfwSetAllEpStatus
+      0     18   usbfwSetupHandler
+        0     15   -> usbcrHookProcessIn
+        0     15   -> usbcrHookProcessOut
+        0     18   -> usbfwReadFifo
+        0     18   -> usbfwWriteFifo
+        0     15   -> usbsrClearFeature
+        0     15   -> usbsrGetConfiguration
+        0     15   -> usbsrGetDescriptor
+        0     15   -> usbsrGetInterface
+        0     15   -> usbsrGetStatus
+        0     15   -> usbsrSetAddress
+        0     15   -> usbsrSetConfiguration
+        0     15   -> usbsrSetFeature
+        0     15   -> usbsrSetInterface
+        0     15   -> usbvrHookProcessIn
+        0     15   -> usbvrHookProcessOut
+      1     27   usbfwWriteFifo
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       7  ?Subroutine0
+       5  ?Subroutine1
+      16  ?Subroutine2
+       8  ?Subroutine3
+       5  ?Subroutine4
+      10  ?Subroutine5
+       9  ?Subroutine6
+       2  ProcessFunc
+       5  usbSetupData
+       8  usbSetupHeader
+      20  usbfwData
+      71  usbfwInit
+       6  usbfwInit::?relay
+      38  usbfwReadFifo
+       6  usbfwReadFifo::?relay
+      28  usbfwResetHandler
+       6  usbfwResetHandler::?relay
+      26  usbfwSetAllEpStatus
+       6  usbfwSetAllEpStatus::?relay
+     529  usbfwSetupHandler
+       6  usbfwSetupHandler::?relay
+      40  usbfwWriteFifo
+       6  usbfwWriteFifo::?relay
+
+ 
+ 792 bytes in segment BANKED_CODE
+  36 bytes in segment BANK_RELAYS
+   2 bytes in segment DATA_Z
+  33 bytes in segment XDATA_Z
+ 
+  36 bytes of CODE     memory
+   2 bytes of DATA     memory
+ 792 bytes of HUGECODE memory
+  33 bytes of XDATA    memory
+
+Errors: none
+Warnings: none

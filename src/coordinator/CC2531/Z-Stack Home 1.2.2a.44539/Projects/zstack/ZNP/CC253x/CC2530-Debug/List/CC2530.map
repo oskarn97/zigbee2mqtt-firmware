@@ -1,0 +1,17 @@
+Warning[w6]: Type conflict for external/entry "gNWK_MAX_DEVICE_LIST", in module AddrMgr against external/entry in module nwk_globals; different basic types
+  /* In module AddrMgr: */
+  uint8 __code const gNWK_MAX_DEVICE_LIST;
+    typedef unsigned char uint8;
+  /* In module nwk_globals: */
+  uint16 __code const gNWK_MAX_DEVICE_LIST;
+    typedef unsigned short uint16;
+Error[e16]: Segment XDATA_Z (size: 0xf203 align: 0) is too long for segment definition. At least 0xd7d4 more bytes needed. The problem occurred while processing the segment placement command "-Z(XDATA)XDATA_Z,XDATA_I=_XDATA_START-_XDATA_END", where at the moment of placement the available memory ranges were "XDATA:4d1-1eff"
+   Reserved ranges relevant to this placement:
+   XDATA:1-4d0          XSTACK
+   XDATA:4d1-1eff       XDATA_Z
+   BIT:0-7              BREG
+   BIT:80-87            SFR_AN
+   BIT:90-97            SFR_AN
+   BIT:a0-af            SFR_AN
+   BIT:b8-c7            SFR_AN
+   BIT:f8-ff            SFR_AN

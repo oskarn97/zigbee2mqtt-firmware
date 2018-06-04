@@ -1,0 +1,1078 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.10.1.4655 for 8051               16/Feb/2018  21:40:30
+# Copyright 2004-2017 IAR Systems AB.
+# Evaluation license - IAR Embedded Workbench for 8051, Evaluation version 10.10
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Components\hal\target\CC2530USB\usb\library\usb_descriptor_parser.c
+#    Command line       =  
+#        -f C:\Users\Oskar\AppData\Local\Temp\EW6B6A.tmp ("C:\Texas
+#        Instruments\Z-Stack Home
+#        1.2.2a.44539\Components\hal\target\CC2530USB\usb\library\usb_descriptor_parser.c"
+#        -D FEATURE_SYSTEM_STATS -D CC2531ZNP -D POWER_SAVING -D
+#        xTC_LINKKEY_JOIN -lC "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\CC2531-Debug\List" -lA
+#        "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\CC2531-Debug\List"
+#        --diag_suppress Pe001,Pa010 -o "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\CC2531-Debug\Obj" -e --debug
+#        --core=plain --dptr=16,1 --data_model=large --code_model=banked
+#        --calling_convention=xdata_reentrant --place_constants=data_rom
+#        --nr_virtual_regs 16 -f "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\Source\znp.cfg"
+#        (-DMAC_CFG_APP_PENDING_QUEUE=TRUE
+#        "-DZSTACK_DEVICE_BUILD=(DEVICE_BUILD_COORDINATOR | DEVICE_BUILD_ROUTER
+#        | DEVICE_BUILD_ENDDEVICE)" -DNWK_AUTO_POLL -DZNP_RUN_WDOG=FALSE
+#        -DZNP_UART_BAUD=HAL_UART_BR_115200 -DZIGBEEPRO -DZIGBEE_FRAGMENTATION
+#        -DINTER_PAN -DOSAL_CLOCK -DOSAL_SAPI=FALSE -DSAPI_CB_FUNC=FALSE
+#        -DHOLD_AUTO_START -DNV_RESTORE -DNV_INIT -DNUM_DISC_ATTEMPTS=0
+#        -DMT_UTIL_FUNC -DMT_SYS_FUNC -DMT_AF_FUNC -DMT_SAPI_FUNC
+#        -DMT_SAPI_CB_FUNC -DMT_ZDO_CB_FUNC -DMT_ZDO_FUNC -DMT_ZDO_MGMT
+#        -DMT_ZDO_EXTENSIONS -DMT_APP_FUNC) -f "C:\Texas Instruments\Z-Stack
+#        Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01, 0x03, 0x05, 0x07,
+#        0x09, 0x0B, 0x0D, 0x0F, 0x00, 0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C,
+#        0x0D}" -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+#        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE
+#        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+#        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000)
+#        -f "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\Tools\CC2530DB\f8wZCL.cfg"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\" -I "C:\Texas
+#        Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\Source\" -I "C:\Texas
+#        Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\Source\" -I "C:\Texas
+#        Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\SE\Source\" -I "C:\Texas
+#        Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\ZMain\TI2530ZNP\" -I
+#        "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\include\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530USB\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530USB\usb\library\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530USB\usb\library\cc2531\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\hal\target\CC2530USB\usb\class_cdc\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\include\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\high_level\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\low_level\srf04\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\mt\" -I
+#        "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\osal\include\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\ecc\binary163\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\ecc\binary283\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\saddr\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\services\sdata\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\af\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\nwk\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sapi\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sec\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\sys\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\zcl\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\stack\zdo\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\zmac\"
+#        -I "C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\..\..\..\..\Components\zmac\f8w\"
+#        -Ohz --require_prototypes --no_code_motion)
+#    Locale             =  German_Germany.1252
+#    List file          =  
+#        C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\CC2531-Debug\List\usb_descriptor_parser.lst
+#    Object file        =  
+#        C:\Texas Instruments\Z-Stack Home
+#        1.2.2a.44539\Projects\zstack\ZNP\CC253x\CC2531-Debug\Obj\usb_descriptor_parser.r51
+#
+###############################################################################
+
+C:\Texas Instruments\Z-Stack Home 1.2.2a.44539\Components\hal\target\CC2530USB\usb\library\usb_descriptor_parser.c
+      1          /***********************************************************************************
+      2          
+      3              Filename:     usb_descriptor_parser.c
+      4          
+      5              Description:  Parser for USB descriptor structures.
+      6          
+      7          ***********************************************************************************/
+      8          
+      9          /// \addtogroup module_usb_descriptor_parser
+     10          /// @{
+     11          #define USBDESCRIPTORPARSER_C ///< Modifies the behavior of "EXTERN" in usb_descriptor_parser.h
+     12          #include "usb_firmware_library_headers.h"
+     13          #include "hal_flash.h"
+     14          
+     15          #if !defined Z_EXTADDR_LEN
+     16          #define Z_EXTADDR_LEN    8
+     17          #endif
+     18          
+     19          //-------------------------------------------------------------------------------------------------------
+     20          // USBDP internal module data
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     21          static USBDP_DATA __xdata usbdpData; ///< USBDP internal module data
+   \                     usbdpData:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+     22          
+     23          //-------------------------------------------------------------------------------------------------------
+     24          // String descriptors (2-byte unicode data).
+     25          
+     26          // Language ID.
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     27          static const uint8 languageId[4] = {
+   \                     languageId:
+   \   000000   04           DB 4
+   \   000001   03           DB 3
+   \   000002   09           DB 9
+   \   000003   04           DB 4
+     28            4,
+     29            DESC_TYPE_STRING,
+     30            0x09, 0x04  /* US-EN */
+     31          };
+     32          
+     33          // Manufacturer.
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     34          static const uint8 manufacturer[36] = {
+   \                     manufacturer:
+   \   000000   24           DB 36
+   \   000001   03           DB 3
+   \   000002   54           DB 84
+   \   000003   00           DB 0
+   \   000004   65           DB 101
+   \   000005   00           DB 0
+   \   000006   78           DB 120
+   \   000007   00           DB 0
+   \   000008   61           DB 97
+   \   000009   00           DB 0
+   \   00000A   73           DB 115
+   \   00000B   00           DB 0
+   \   00000C   20           DB 32
+   \   00000D   00           DB 0
+   \   00000E   49           DB 73
+   \   00000F   00           DB 0
+   \   000010   6E           DB 110
+   \   000011   00           DB 0
+   \   000012   73           DB 115
+   \   000013   00           DB 0
+   \   000014   74           DB 116
+   \   000015   00           DB 0
+   \   000016   72           DB 114
+   \   000017   00           DB 0
+   \   000018   75           DB 117
+   \   000019   00           DB 0
+   \   00001A   6D           DB 109
+   \   00001B   00           DB 0
+   \   00001C   65           DB 101
+   \   00001D   00           DB 0
+   \   00001E   6E           DB 110
+   \   00001F   00           DB 0
+   \   000020   74           DB 116
+   \   000021   00           DB 0
+   \   000022   73           DB 115
+   \   000023   00           DB 0
+     35            36,
+     36            DESC_TYPE_STRING,
+     37            'T', 0,
+     38            'e', 0,
+     39            'x', 0,
+     40            'a', 0,
+     41            's', 0,
+     42            ' ', 0,
+     43            'I', 0,
+     44            'n', 0,
+     45            's', 0,
+     46            't', 0,
+     47            'r', 0,
+     48            'u', 0,
+     49            'm', 0,
+     50            'e', 0,
+     51            'n', 0,
+     52            't', 0,
+     53            's', 0
+     54          };
+     55          
+     56          // Product.
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     57          static const uint8 product[36] = {
+   \                     product:
+   \   000000   24           DB 36
+   \   000001   03           DB 3
+   \   000002   54           DB 84
+   \   000003   00           DB 0
+   \   000004   49           DB 73
+   \   000005   00           DB 0
+   \   000006   20           DB 32
+   \   000007   00           DB 0
+   \   000008   43           DB 67
+   \   000009   00           DB 0
+   \   00000A   43           DB 67
+   \   00000B   00           DB 0
+   \   00000C   32           DB 50
+   \   00000D   00           DB 0
+   \   00000E   35           DB 53
+   \   00000F   00           DB 0
+   \   000010   33           DB 51
+   \   000011   00           DB 0
+   \   000012   31           DB 49
+   \   000013   00           DB 0
+   \   000014   20           DB 32
+   \   000015   00           DB 0
+   \   000016   55           DB 85
+   \   000017   00           DB 0
+   \   000018   53           DB 83
+   \   000019   00           DB 0
+   \   00001A   42           DB 66
+   \   00001B   00           DB 0
+   \   00001C   20           DB 32
+   \   00001D   00           DB 0
+   \   00001E   43           DB 67
+   \   00001F   00           DB 0
+   \   000020   44           DB 68
+   \   000021   00           DB 0
+   \   000022   43           DB 67
+   \   000023   00           DB 0
+     58            36,
+     59            DESC_TYPE_STRING,
+     60            'T', 0,
+     61            'I', 0,
+     62            ' ', 0,
+     63            'C', 0,
+     64            'C', 0,
+     65            '2', 0,
+     66            '5', 0,
+     67            '3', 0,
+     68            '1', 0,
+     69            ' ', 0,
+     70            'U', 0,
+     71            'S', 0,
+     72            'B', 0,
+     73            ' ', 0,
+     74            'C', 0,
+     75            'D', 0,
+     76            'C', 0
+     77          };
+     78          
+     79          // Serial Number.
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     80          static uint8 serialNumber[42] = {
+   \                     serialNumber:
+   \   000000                DS 42
+   \   00002A                REQUIRE `?<Initializer for serialNumber>`
+   \   00002A                REQUIRE __INIT_XDATA_I
+     81            0,  // Initializing to zero vice 42 is the indication to usbdpGetStringDesc() to fill w/ IEEE.
+     82            DESC_TYPE_STRING,
+     83            // Setup for using the 16 nibbles of the hex representation of the IEEE address.
+     84            '_', 0,
+     85            '_', 0,
+     86            '0', 0,
+     87            'X', 0,
+     88          };
+     89          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     90          const uint8 hexDigit[16] = {
+   \                     hexDigit:
+   \   000000   30           DB 48
+   \   000001   31           DB 49
+   \   000002   32           DB 50
+   \   000003   33           DB 51
+   \   000004   34           DB 52
+   \   000005   35           DB 53
+   \   000006   36           DB 54
+   \   000007   37           DB 55
+   \   000008   38           DB 56
+   \   000009   39           DB 57
+   \   00000A   41           DB 65
+   \   00000B   42           DB 66
+   \   00000C   43           DB 67
+   \   00000D   44           DB 68
+   \   00000E   45           DB 69
+   \   00000F   46           DB 70
+     91            '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
+     92          
+     93          /** \brief	Initializes a search
+     94          *
+     95          * This function must be called before each new search to reset \ref USBDP_DATA.pDesc.
+     96          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     97          void usbdpInit(void)
+   \                     usbdpInit:
+     98          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     99             usbdpData.pDesc = (const uint8 __code *) usbDescriptorMarker.pUsbDescStart;
+   \   000004   12....       LCALL     ?Subroutine1 & 0xFFFF
+    100          } // usbdpInit
+   \                     ??CrossCallReturnLabel_0:
+   \   000007                REQUIRE ?Subroutine0
+   \   000007                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP       DPH
+   \   000002   D082         POP       DPL
+   \   000004   02....       LJMP      ?BRET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   90....       MOV       DPTR,#usbDescriptorMarker
+   \   000003   E0           MOVX      A,@DPTR
+   \   000004   F8           MOV       R0,A
+   \   000005   A3           INC       DPTR
+   \   000006   E0           MOVX      A,@DPTR
+   \   000007   F9           MOV       R1,A
+   \   000008   90....       MOV       DPTR,#usbdpData
+   \   00000B   E8           MOV       A,R0
+   \   00000C   F0           MOVX      @DPTR,A
+   \   00000D   A3           INC       DPTR
+   \   00000E   E9           MOV       A,R1
+   \   00000F   F0           MOVX      @DPTR,A
+   \   000010   22           RET
+    101          
+    102          
+    103          
+    104          
+    105          /** \brief	Locates the descriptor of the wanted type
+    106          *
+    107          * This function parses through the USB descriptors until:
+    108          * \li It hits one with <tt>bDescriptorType = wantedType</tt>, in which case it returns a pointer to
+    109          *     that descriptor, and exits. \ref USBDP_DATA.pDesc will then point to the next descriptor.
+    110          * \li It hits one with <tt>bDescriptorType = haltAtType</tt>, in which case it returns a NULL-pointer,
+    111          *     and exits. \ref USBDP_DATA.pDesc will then point to that descriptor.
+    112          * \li \ref USBDP_DATA.pDesc = \ref usbDescEnd, in which case it returns a NULL-pointer, and exits.
+    113          *     \ref USBDP_DATA.pDesc will continue to point to \ref usbDescEnd.
+    114          *
+    115          * \note To begin a search with this function, \ref usbdpInit should be called first. It should not be
+    116          *       called when continuing a search - for instance after a call to \ref usbdpGetConfigurationDesc().
+    117          *
+    118          * \param[in]       wantedType
+    119          *     The wanted descriptor type (e.g. \ref DESC_TYPE_CONFIG)
+    120          * \param[in]       haltAtType
+    121          *     The parser halts when it reaches this descriptor type, unless \c haltAtType is \c 0 (which in any
+    122          *     case is an invalid \c bDescriptorType value).
+    123          *
+    124          * \return
+    125          *     A pointer to the wanted descriptor type, or \c NULL if it was not found.
+    126          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    127          void __code* usbdpFindNext(uint8 wantedType, uint8 haltAtType)
+   \                     usbdpFindNext:
+    128          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004   E9           MOV       A,R1
+   \   000005   FC           MOV       R4,A
+   \   000006   EA           MOV       A,R2
+   \   000007   FD           MOV       R5,A
+    129             void __code *pResult;
+    130             pResult = NULL;
+   \   000008   7A00         MOV       R2,#0x0
+   \   00000A   7B00         MOV       R3,#0x0
+   \   00000C   8007         SJMP      ??CrossCallReturnLabel_3
+    131          
+    132             // As long as we haven't reached the end...
+    133             while (usbdpData.pDesc != (void __code *) usbDescriptorMarker.pUsbDescEnd) {
+    134          
+    135                // If we have a match on wantedType...
+    136                if (usbdpData.pDesc[DESC_TYPE_IDX] == wantedType) {
+    137                   pResult = (void __code*) usbdpData.pDesc;
+    138                   usbdpData.pDesc += usbdpData.pDesc[DESC_LENGTH_IDX];
+    139                   break;
+    140          
+    141                // If we have a match on haltAtType...
+    142                } else if (usbdpData.pDesc[DESC_TYPE_IDX] == haltAtType) {
+    143                   if (haltAtType) break;
+    144                }
+    145          
+    146                // Move on to the next descriptor
+    147                usbdpData.pDesc += usbdpData.pDesc[DESC_LENGTH_IDX];
+   \                     ??usbdpFindNext_0:
+   \   00000E   90....       MOV       DPTR,#usbdpData + 1
+   \   000011   E0           MOVX      A,@DPTR
+   \   000012   12....       LCALL     ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   000015   90....       MOV       DPTR,#usbdpData
+   \   000018   E0           MOVX      A,@DPTR
+   \   000019   F8           MOV       R0,A
+   \   00001A   A3           INC       DPTR
+   \   00001B   E0           MOVX      A,@DPTR
+   \   00001C   F9           MOV       R1,A
+   \   00001D   90....       MOV       DPTR,#usbDescriptorMarker + 2
+   \   000020   E0           MOVX      A,@DPTR
+   \   000021   68           XRL       A,R0
+   \   000022   7003         JNZ       ??usbdpFindNext_1
+   \   000024   A3           INC       DPTR
+   \   000025   E0           MOVX      A,@DPTR
+   \   000026   69           XRL       A,R1
+   \                     ??usbdpFindNext_1:
+   \   000027   601C         JZ        ??usbdpFindNext_2
+   \   000029   12....       LCALL     ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_7:
+   \   00002C   6C           XRL       A,R4
+   \   00002D   700D         JNZ       ??usbdpFindNext_3
+   \   00002F   90....       MOV       DPTR,#usbdpData
+   \   000032   E0           MOVX      A,@DPTR
+   \   000033   FA           MOV       R2,A
+   \   000034   A3           INC       DPTR
+   \   000035   E0           MOVX      A,@DPTR
+   \   000036   FB           MOV       R3,A
+   \   000037   12....       LCALL     ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   00003A   8009         SJMP      ??usbdpFindNext_2
+   \                     ??usbdpFindNext_3:
+   \   00003C   12....       LCALL     ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_8:
+   \   00003F   6D           XRL       A,R5
+   \   000040   70CC         JNZ       ??usbdpFindNext_0
+   \   000042   ED           MOV       A,R5
+   \   000043   60C9         JZ        ??usbdpFindNext_0
+    148             }
+    149          
+    150             return pResult;
+   \                     ??usbdpFindNext_2:
+   \   000045   80..         SJMP      ?Subroutine0
+    151          } // usbdpFindNext
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   90....       MOV       DPTR,#usbdpData + 1
+   \   000003   E0           MOVX      A,@DPTR
+   \   000004   F583         MOV       DPH,A
+   \   000006   8882         MOV       DPL,R0
+   \   000008   A3           INC       DPTR
+   \   000009   E4           CLR       A
+   \   00000A   93           MOVC      A,@A+DPTR
+   \   00000B   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   F583         MOV       DPH,A
+   \   000002   8882         MOV       DPL,R0
+   \   000004   E4           CLR       A
+   \   000005   93           MOVC      A,@A+DPTR
+   \   000006   F8           MOV       R0,A
+   \   000007   90....       MOV       DPTR,#usbdpData
+   \   00000A   E0           MOVX      A,@DPTR
+   \   00000B   28           ADD       A,R0
+   \   00000C   F8           MOV       R0,A
+   \   00000D   A3           INC       DPTR
+   \   00000E   E0           MOVX      A,@DPTR
+   \   00000F   3400         ADDC      A,#0x0
+   \   000011   F9           MOV       R1,A
+   \   000012   90....       MOV       DPTR,#usbdpData
+   \   000015   E8           MOV       A,R0
+   \   000016   F0           MOVX      @DPTR,A
+   \   000017   A3           INC       DPTR
+   \   000018   E9           MOV       A,R1
+   \   000019   F0           MOVX      @DPTR,A
+   \   00001A   22           RET
+    152          
+    153          
+    154          
+    155          
+    156          /** \brief	Locates the (one and only) device descriptor
+    157          *
+    158          * \note It is not necessary to call \ref usbdpInit() before this function.
+    159          *
+    160          * \return
+    161          *     A pointer to the \ref USB_DEVICE_DESCRIPTOR, or \c NULL if it was not found.
+    162          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    163          USB_DEVICE_DESCRIPTOR __code* usbdpGetDeviceDesc(void)
+   \                     usbdpGetDeviceDesc:
+    164          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    165             usbdpInit();
+   \   000004   12....       LCALL     ?Subroutine1 & 0xFFFF
+    166             return usbdpFindNext(DESC_TYPE_DEVICE, 0);
+   \                     ??CrossCallReturnLabel_1:
+   \   000007                ; Setup parameters for call to function usbdpFindNext
+   \   000007   7A00         MOV       R2,#0x0
+   \   000009   7901         MOV       R1,#0x1
+   \   00000B   12....       LCALL     `??usbdpFindNext::?relay`; Banked call to: usbdpFindNext
+   \   00000E   02....       LJMP      ?Subroutine0 & 0xFFFF
+    167          } // usbdpGetDeviceDesc
+    168          
+    169          
+    170          
+    171          
+    172          /** \brief	Locates a configuration descriptor
+    173          *
+    174          * The search will either look for a descriptor with a specific
+    175          * \ref USB_CONFIGURATION_DESCRIPTOR.bConfigurationValue, or simply take the n'th descriptor (by "index")
+    176          *
+    177          * \note It is not necessary to call \ref usbdpInit() before this function.
+    178          *
+    179          * \param[in]       cfgValue
+    180          *     The configuration value to search for (\ref USB_CONFIGURATION_DESCRIPTOR.bConfigurationValue), or
+    181          *     0 to find descriptor by index
+    182          * \param[in]       cfgIndex
+    183          *     A zero-based index for the configuration descriptor to find.
+    184          *     This value is ignored unless \c cfgValue is 0.
+    185          *
+    186          * \return
+    187          *     A pointer to the \ref USB_DEVICE_DESCRIPTOR, or \c NULL if it was not found.
+    188          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    189          USB_CONFIGURATION_DESCRIPTOR __code* usbdpGetConfigurationDesc(uint8 cfgValue, uint8 cfgIndex)
+   \                     usbdpGetConfigurationDesc:
+    190          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V1
+   \   000000   74F6         MOV       A,#-0xa
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV       A,R1
+   \   000006   FF           MOV       R7,A
+   \   000007   EA           MOV       A,R2
+   \   000008   FE           MOV       R6,A
+    191             USB_CONFIGURATION_DESCRIPTOR __code *pConfigurationDesc;
+    192             usbdpInit();
+   \   000009   12....       LCALL     ?Subroutine1 & 0xFFFF
+    193          
+    194             // As long as there are more configuration descriptors...
+    195             while (pConfigurationDesc = usbdpFindNext(DESC_TYPE_CONFIG, 0)) {
+   \                     ??CrossCallReturnLabel_2:
+   \   00000C                ; Setup parameters for call to function usbdpFindNext
+   \   00000C   7A00         MOV       R2,#0x0
+   \   00000E   7902         MOV       R1,#0x2
+   \   000010   12....       LCALL     `??usbdpFindNext::?relay`; Banked call to: usbdpFindNext
+   \   000013   EA           MOV       A,R2
+   \   000014   4B           ORL       A,R3
+   \   000015   601C         JZ        ??usbdpGetConfigurationDesc_0
+    196          
+    197                // Search by value?
+    198                if (cfgValue) {
+   \   000017   EF           MOV       A,R7
+   \   000018   6010         JZ        ??usbdpGetConfigurationDesc_1
+    199                   if (cfgValue == pConfigurationDesc->bConfigurationValue) break;
+   \   00001A   8A82         MOV       DPL,R2
+   \   00001C   8B83         MOV       DPH,R3
+   \   00001E   A3           INC       DPTR
+   \   00001F   A3           INC       DPTR
+   \   000020   A3           INC       DPTR
+   \   000021   A3           INC       DPTR
+   \   000022   A3           INC       DPTR
+   \   000023   E4           CLR       A
+   \   000024   93           MOVC      A,@A+DPTR
+   \   000025   6F           XRL       A,R7
+   \   000026   70E4         JNZ       ??CrossCallReturnLabel_2
+   \   000028   8009         SJMP      ??usbdpGetConfigurationDesc_0
+    200          
+    201                // Search by index? (search cfgIndex+1 times)
+    202                } else if (!cfgIndex--) {
+   \                     ??usbdpGetConfigurationDesc_1:
+   \   00002A   EE           MOV       A,R6
+   \   00002B   F8           MOV       R0,A
+   \   00002C   74FF         MOV       A,#-0x1
+   \   00002E   28           ADD       A,R0
+   \   00002F   FE           MOV       R6,A
+   \   000030   04           INC       A
+   \   000031   70D9         JNZ       ??CrossCallReturnLabel_2
+    203                   break;
+    204                }
+    205             }
+    206          
+    207             return pConfigurationDesc;
+   \                     ??usbdpGetConfigurationDesc_0:
+   \   000033   7F02         MOV       R7,#0x2
+   \   000035   02....       LJMP      ?BANKED_LEAVE_XDATA
+    208          } // usbdpGetConfigurationDesc
+    209          
+    210          
+    211          
+    212          
+    213          /** \brief	Locates an interface descriptor
+    214          *
+    215          * The function will first go to the configuration descriptor that matches the supplied configuration
+    216          * value, and then locate the interface descriptor that matches the given interface number and alternate
+    217          * setting.
+    218          *
+    219          * \note It is not necessary to call \ref usbdpInit() before this function.
+    220          *
+    221          * \param[in]       cfgValue
+    222          *     The configuration value (\ref USB_CONFIGURATION_DESCRIPTOR.bConfigurationValue)
+    223          * \param[in]       intNumber
+    224          *     The interface number (\ref USB_INTERFACE_DESCRIPTOR.bInterfaceNumber)
+    225          * \param[in]       altSetting
+    226          *     The alternate setting (\ref USB_INTERFACE_DESCRIPTOR.bAlternateSetting)
+    227          *
+    228          * \return
+    229          *     A pointer to the \ref USB_INTERFACE_DESCRIPTOR, or \c NULL if it was not found.
+    230          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    231          USB_INTERFACE_DESCRIPTOR __code* usbdpGetInterfaceDesc(uint8 cfgValue, uint8 intNumber, uint8 altSetting)
+   \                     usbdpGetInterfaceDesc:
+    232          {
+   \   000000                REQUIRE ?V0
+   \   000000                REQUIRE ?V2
+   \   000000                REQUIRE ?V3
+   \   000000   74F4         MOV       A,#-0xc
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV       A,R2
+   \   000006   FF           MOV       R7,A
+   \   000007   8B..         MOV       ?V0,R3
+    233             USB_INTERFACE_DESCRIPTOR __code *pInterfaceDesc;
+    234          
+    235             // First get to the correct configuration
+    236             usbdpGetConfigurationDesc(cfgValue, 0);
+   \   000009                ; Setup parameters for call to function usbdpGetConfigurationDesc
+   \   000009   7A00         MOV       R2,#0x0
+   \   00000B   12....       LCALL     `??usbdpGetConfigurationDesc::?relay`; Banked call to: usbdpGetConfigurationDesc
+    237          
+    238             // Then find a match on the interface
+    239             while (pInterfaceDesc = usbdpFindNext(DESC_TYPE_INTERFACE, DESC_TYPE_CONFIG)) {
+   \                     ??usbdpGetInterfaceDesc_0:
+   \   00000E                ; Setup parameters for call to function usbdpFindNext
+   \   00000E   7A02         MOV       R2,#0x2
+   \   000010   7904         MOV       R1,#0x4
+   \   000012   12....       LCALL     `??usbdpFindNext::?relay`; Banked call to: usbdpFindNext
+   \   000015   EA           MOV       A,R2
+   \   000016   4B           ORL       A,R3
+   \   000017   6018         JZ        ??usbdpGetInterfaceDesc_1
+    240                if ((pInterfaceDesc->bInterfaceNumber == intNumber) && (pInterfaceDesc->bAlternateSetting == altSetting)) {
+   \   000019   8A82         MOV       DPL,R2
+   \   00001B   8B83         MOV       DPH,R3
+   \   00001D   A3           INC       DPTR
+   \   00001E   A3           INC       DPTR
+   \   00001F   E4           CLR       A
+   \   000020   93           MOVC      A,@A+DPTR
+   \   000021   6F           XRL       A,R7
+   \   000022   70EA         JNZ       ??usbdpGetInterfaceDesc_0
+   \   000024   8A82         MOV       DPL,R2
+   \   000026   8B83         MOV       DPH,R3
+   \   000028   A3           INC       DPTR
+   \   000029   A3           INC       DPTR
+   \   00002A   A3           INC       DPTR
+   \   00002B   E4           CLR       A
+   \   00002C   93           MOVC      A,@A+DPTR
+   \   00002D   65..         XRL       A,?V0
+   \   00002F   70DD         JNZ       ??usbdpGetInterfaceDesc_0
+    241                   break;
+    242                }
+    243             }
+    244          
+    245             return pInterfaceDesc;
+   \                     ??usbdpGetInterfaceDesc_1:
+   \   000031   7F04         MOV       R7,#0x4
+   \   000033   02....       LJMP      ?BANKED_LEAVE_XDATA
+    246          } // usbdpGetInterfaceDesc
+    247          
+    248          
+    249          
+    250          
+    251          /** \brief	Locates a string descriptor
+    252          *
+    253          * \note It is not necessary to call \ref usbdpInit() before this function.
+    254          *
+    255          * \param[in]       strIndex
+    256          *     A zero-based index that matches the "iXxxxxxxxxx" string indexes in the other descriptors
+    257          *
+    258          * \return
+    259          *     A pointer to the \ref USB_INTERFACE_DESCRIPTOR, or \c NULL if it was not found.
+    260          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    261          USB_STRING_DESCRIPTOR* usbdpGetStringDesc(uint8 strIndex)
+   \                     usbdpGetStringDesc:
+    262          {
+   \   000000   74F7         MOV       A,#-0x9
+   \   000002   12....       LCALL     ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV       A,R1
+    263            USB_STRING_DESCRIPTOR *pStringDesc = NULL;
+   \   000006   7A00         MOV       R2,#0x0
+   \   000008   7B00         MOV       R3,#0x0
+    264          
+    265          #ifdef MS_EXT_C_ID
+    266            /* TODO: Find the Microsoft OS String Descriptor?
+    267            usbdpInit();
+    268          
+    269            if (strIndex == 0xEE){
+    270              // Find the Microsoft OS String Descriptor
+    271              do{
+    272                pStringDesc = usbdpFindNext(DESC_TYPE_STRING, 0);
+    273              }while (pStringDesc != NULL && pStringDesc->bLength != 18);
+    274            } else
+    275            */
+    276          #endif
+    277            {
+    278              switch (strIndex)
+   \   00000A   600B         JZ        ??usbdpGetStringDesc_0
+   \   00000C   14           DEC       A
+   \   00000D   600E         JZ        ??usbdpGetStringDesc_1
+   \   00000F   14           DEC       A
+   \   000010   6011         JZ        ??usbdpGetStringDesc_2
+   \   000012   14           DEC       A
+   \   000013   6014         JZ        ??usbdpGetStringDesc_3
+   \   000015   8066         SJMP      ??usbdpGetStringDesc_4
+    279              {
+    280              case 0:
+    281                pStringDesc = (USB_STRING_DESCRIPTOR *)languageId;
+   \                     ??usbdpGetStringDesc_0:
+   \   000017   7A..         MOV       R2,#languageId & 0xff
+   \   000019   7B..         MOV       R3,#(languageId >> 8) & 0xff
+    282                break;
+   \   00001B   8060         SJMP      ??usbdpGetStringDesc_4
+    283          
+    284              case 1:
+    285                pStringDesc = (USB_STRING_DESCRIPTOR *)manufacturer;
+   \                     ??usbdpGetStringDesc_1:
+   \   00001D   7A..         MOV       R2,#manufacturer & 0xff
+   \   00001F   7B..         MOV       R3,#(manufacturer >> 8) & 0xff
+    286                break;
+   \   000021   805A         SJMP      ??usbdpGetStringDesc_4
+    287          
+    288              case 2:
+    289                pStringDesc = (USB_STRING_DESCRIPTOR *)product;
+   \                     ??usbdpGetStringDesc_2:
+   \   000023   7A..         MOV       R2,#product & 0xff
+   \   000025   7B..         MOV       R3,#(product >> 8) & 0xff
+    290                break;
+   \   000027   8054         SJMP      ??usbdpGetStringDesc_4
+    291          
+    292              case 3:
+    293                if (serialNumber[0] == 0)
+   \                     ??usbdpGetStringDesc_3:
+   \   000029   90....       MOV       DPTR,#serialNumber
+   \   00002C   E0           MOVX      A,@DPTR
+   \   00002D   704A         JNZ       ??usbdpGetStringDesc_5
+    294                {
+    295          #if (defined HAL_SB_BOOT_CODE || defined CC253X_MACNP || defined CC2531_TIMAC)
+    296                  #include <string.h>
+    297                  uint8 nullAddr[Z_EXTADDR_LEN] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
+    298                  uint8 aExtendedAddress[8];
+    299          
+    300                  // Attempt to read the extended address from the location on the lock bits page
+    301                  // where the programming tools know to reserve it.
+    302                  HalFlashRead(HAL_FLASH_IEEE_PAGE, HAL_FLASH_IEEE_OSET, aExtendedAddress, Z_EXTADDR_LEN);
+    303          
+    304                  if (!memcmp(aExtendedAddress, nullAddr, Z_EXTADDR_LEN))
+    305                  {
+    306                    // Attempt to read the extended address from the designated location in the Info Page.
+    307                    (void)memcpy(aExtendedAddress, (uint8 *)(P_INFOPAGE+HAL_INFOP_IEEE_OSET), Z_EXTADDR_LEN);
+    308                  }
+    309          #else
+    310                  extern uint8 aExtendedAddress[Z_EXTADDR_LEN];
+    311          #endif
+    312                  // Load the 16 nibbles of the hex representation of the IEEE address into the serialNumber
+    313                  // string in big-endian (i.e. human-readable) order.
+    314                  for (uint8 idx = sizeof(serialNumber)-2, cnt = 0; cnt < Z_EXTADDR_LEN; cnt++, idx -= 4)
+   \   00002F   7A28         MOV       R2,#0x28
+   \   000031   7B00         MOV       R3,#0x0
+    315                  {
+    316                    serialNumber[idx]   = hexDigit[aExtendedAddress[cnt] & 0x0F];
+   \                     ??usbdpGetStringDesc_6:
+   \   000033   EB           MOV       A,R3
+   \   000034   F8           MOV       R0,A
+   \   000035   74..         MOV       A,#aExtendedAddress & 0xff
+   \   000037   28           ADD       A,R0
+   \   000038   F582         MOV       DPL,A
+   \   00003A   E4           CLR       A
+   \   00003B   34..         ADDC      A,#(aExtendedAddress >> 8) & 0xff
+   \   00003D   F583         MOV       DPH,A
+   \   00003F   E0           MOVX      A,@DPTR
+   \   000040   FF           MOV       R7,A
+   \   000041   EA           MOV       A,R2
+   \   000042   F8           MOV       R0,A
+   \   000043   74..         MOV       A,#serialNumber & 0xff
+   \   000045   28           ADD       A,R0
+   \   000046   F8           MOV       R0,A
+   \   000047   E4           CLR       A
+   \   000048   34..         ADDC      A,#(serialNumber >> 8) & 0xff
+   \   00004A   F9           MOV       R1,A
+   \   00004B   EF           MOV       A,R7
+   \   00004C   12....       LCALL     ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   00004F   8882         MOV       DPL,R0
+   \   000051   8983         MOV       DPH,R1
+   \   000053   F0           MOVX      @DPTR,A
+    317                    serialNumber[idx-2] = hexDigit[aExtendedAddress[cnt] / 16];
+   \   000054   EF           MOV       A,R7
+   \   000055   C4           SWAP      A
+   \   000056   12....       LCALL     ?Subroutine3 & 0xFFFF
+    318                  }
+   \                     ??CrossCallReturnLabel_6:
+   \   000059   C0E0         PUSH      A
+   \   00005B   E8           MOV       A,R0
+   \   00005C   24FE         ADD       A,#-0x2
+   \   00005E   F582         MOV       DPL,A
+   \   000060   E9           MOV       A,R1
+   \   000061   34FF         ADDC      A,#-0x1
+   \   000063   F583         MOV       DPH,A
+   \   000065   D0E0         POP       A
+   \   000067   F0           MOVX      @DPTR,A
+   \   000068   0B           INC       R3
+   \   000069   74FC         MOV       A,#-0x4
+   \   00006B   2A           ADD       A,R2
+   \   00006C   FA           MOV       R2,A
+   \   00006D   EB           MOV       A,R3
+   \   00006E   C3           CLR       C
+   \   00006F   9408         SUBB      A,#0x8
+   \   000071   40C0         JC        ??usbdpGetStringDesc_6
+    319                  serialNumber[0] = sizeof(serialNumber);
+   \   000073   90....       MOV       DPTR,#serialNumber
+   \   000076   742A         MOV       A,#0x2a
+   \   000078   F0           MOVX      @DPTR,A
+    320                }
+    321                pStringDesc = (USB_STRING_DESCRIPTOR *)serialNumber;
+   \                     ??usbdpGetStringDesc_5:
+   \   000079   7A..         MOV       R2,#serialNumber & 0xff
+   \   00007B   7B..         MOV       R3,#(serialNumber >> 8) & 0xff
+    322                break;
+    323          
+    324              default:
+    325                break;
+    326              }
+    327            }
+    328          
+    329            return pStringDesc;
+   \                     ??usbdpGetStringDesc_4:
+   \   00007D   7F01         MOV       R7,#0x1
+   \   00007F   02....       LJMP      ?BANKED_LEAVE_XDATA
+    330          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   540F         ANL       A,#0xf
+   \   000002   FC           MOV       R4,A
+   \   000003   74..         MOV       A,#hexDigit & 0xff
+   \   000005   2C           ADD       A,R4
+   \   000006   F582         MOV       DPL,A
+   \   000008   E4           CLR       A
+   \   000009   34..         ADDC      A,#(hexDigit >> 8) & 0xff
+   \   00000B   F583         MOV       DPH,A
+   \   00000D   E0           MOVX      A,@DPTR
+   \   00000E   22           RET
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for serialNumber>`:
+   \   000000   00           DB 0
+   \   000001   03           DB 3
+   \   000002   5F           DB 95
+   \   000003   00           DB 0
+   \   000004   5F           DB 95
+   \   000005   00           DB 0
+   \   000006   30           DB 48
+   \   000007   00           DB 0
+   \   000008   58           DB 88
+   \   000009   00           DB 0
+   \   00000A   00           DB 0
+   \   00000B   00           DB 0
+   \   00000C   00           DB 0
+   \   00000D   00           DB 0
+   \   00000E   00           DB 0
+   \   00000F   00           DB 0
+   \   000010   00           DB 0
+   \   000011   00           DB 0
+   \   000012   00           DB 0
+   \   000013   00           DB 0
+   \   000014   00           DB 0
+   \   000015   00           DB 0
+   \   000016   00           DB 0
+   \   000017   00           DB 0
+   \   000018   00           DB 0
+   \   000019   00           DB 0
+   \   00001A   00           DB 0
+   \   00001B   00           DB 0
+   \   00001C   00           DB 0
+   \   00001D   00           DB 0
+   \   00001E   00           DB 0
+   \   00001F   00           DB 0
+   \   000020   00           DB 0
+   \   000021   00           DB 0
+   \   000022   00           DB 0
+   \   000023   00           DB 0
+   \   000024   00           DB 0
+   \   000025   00           DB 0
+   \   000026   00           DB 0
+   \   000027   00           DB 0
+   \   000028   00           DB 0
+   \   000029   00           DB 0
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbdpInit::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbdpInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbdpFindNext::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbdpFindNext
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbdpGetDeviceDesc::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbdpGetDeviceDesc
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbdpGetConfigurationDesc::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbdpGetConfigurationDesc
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbdpGetInterfaceDesc::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbdpGetInterfaceDesc
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     `??usbdpGetStringDesc::?relay`:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    usbdpGetStringDesc
+    331          /// @}
+    332          
+    333          /*
+    334          +------------------------------------------------------------------------------
+    335          |  Copyright 2004-2013 Texas Instruments Incorporated. All rights reserved.
+    336          |
+    337          |  IMPORTANT: Your use of this Software is limited to those specific rights
+    338          |  granted under the terms of a software license agreement between the user who
+    339          |  downloaded the software, his/her employer (which must be your employer) and
+    340          |  Texas Instruments Incorporated (the "License"). You may not use this Software
+    341          |  unless you agree to abide by the terms of the License. The License limits
+    342          |  your use, and you acknowledge, that the Software may not be modified, copied
+    343          |  or distributed unless embedded on a Texas Instruments microcontroller or used
+    344          |  solely and exclusively in conjunction with a Texas Instruments radio
+    345          |  frequency transceiver, which is integrated into your product. Other than for
+    346          |  the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+    347          |  works of, modify, distribute, perform, display or sell this Software and/or
+    348          |  its documentation for any purpose.
+    349          |
+    350          |  YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+    351          |  PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+    352          |  INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+    353          |  NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+    354          |  TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+    355          |  NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+    356          |  LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES INCLUDING
+    357          |  BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE OR
+    358          |  CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT OF
+    359          |  SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+    360          |  (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+    361          |
+    362          |  Should you have any questions regarding your right to use this Software,
+    363          |  contact Texas Instruments Incorporated at www.TI.com.
+    364          |
+    365          +------------------------------------------------------------------------------
+    366          */
+
+   Maximum stack usage in bytes:
+
+   ISTACK XSTACK Function
+   ------ ------ --------
+      2     12   usbdpFindNext
+      0     22   usbdpGetConfigurationDesc
+        0     10   -> usbdpFindNext
+      2      0   usbdpGetDeviceDesc
+        2      0   -> usbdpFindNext
+      0     12   usbdpGetInterfaceDesc
+        0     12   -> usbdpFindNext
+        0     12   -> usbdpGetConfigurationDesc
+      1      9   usbdpGetStringDesc
+      2      0   usbdpInit
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      42  ?<Initializer for serialNumber>
+       7  ?Subroutine0
+      17  ?Subroutine1
+      27  ?Subroutine2
+      15  ?Subroutine3
+      12  ?Subroutine4
+      16  hexDigit
+       4  languageId
+      36  manufacturer
+      36  product
+      42  serialNumber
+       2  usbdpData
+      71  usbdpFindNext
+       6  usbdpFindNext::?relay
+      56  usbdpGetConfigurationDesc
+       6  usbdpGetConfigurationDesc::?relay
+      17  usbdpGetDeviceDesc
+       6  usbdpGetDeviceDesc::?relay
+      54  usbdpGetInterfaceDesc
+       6  usbdpGetInterfaceDesc::?relay
+     130  usbdpGetStringDesc
+       6  usbdpGetStringDesc::?relay
+       7  usbdpInit
+       6  usbdpInit::?relay
+
+ 
+ 413 bytes in segment BANKED_CODE
+  36 bytes in segment BANK_RELAYS
+  42 bytes in segment XDATA_I
+  42 bytes in segment XDATA_ID
+  92 bytes in segment XDATA_ROM_C
+   2 bytes in segment XDATA_Z
+ 
+  78 bytes of CODE     memory
+  92 bytes of CONST    memory
+ 413 bytes of HUGECODE memory
+  44 bytes of XDATA    memory
+
+Errors: none
+Warnings: none
